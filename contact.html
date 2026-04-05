@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jafep Polska | Hiszpańskie Tradycje, Europejskie Standardy</title>
+    <meta name="description" content="Masz pytania? Skontaktuj się z biurem Jafep Polska w Warszawie. Adres, telefon, e-mail i formularz kontaktowy. Zapraszamy!">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Jafep Polska Logo" class="hanging-logo">
+            </a>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+        </div>
+
+
+        <nav class="custom-nav">
+            <ul>
+                <li><a href="index.html" id="menu-home"><i class="fas fa-home"></i></a></li>
+                <li><a href="about.html" id="menu-about">O nas</a></li>
+                <li><a href="catalogues.html" id="menu-catalogues">Katalogi</a></li>
+                <li><a href="products.html" id="menu-products">Produkty</a></li>
+               <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">
+        <span id="menu-where-text">Gdzie kupić?</span>
+        <i class="fas fa-chevron-down nav-arrow"></i>
+    </a>
+    <div class="dropdown-content">
+        <a href="consumer.html" id="menu-where-cons">Jestem konsumentem</a>
+        <a href="distributor.html" id="menu-where-dist">Jestem dystrybutorem</a>
+    </div>
+</li>
+                <li><a href="franchise.html" id="menu-franchise">Franczyza</a></li>
+                <li><a href="blog.html" id="menu-blog">Blog</a></li>
+                <li><a href="contact.html" id="menu-contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-tools">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Szukaj...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="lang-switch">
+                <span onclick="changeLang('pl', event)" class="lang-btn active">PL</span>
+                <span onclick="changeLang('en', event)" class="lang-btn">EN</span>
+                <span onclick="changeLang('ru', event)" class="lang-btn">RU</span>
+                <span onclick="changeLang('ua', event)" class="lang-btn">UA</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<main class="contact-page-content reveal">
+    <div class="container" style="display: block; text-align: center; padding: 80px 0;">
+        <p id="contact-tag" class="green-subtitle" style="text-transform: capitalize; margin-bottom: 10px;">Kontakt</p>
+        <h1 id="contact-main-title" style="font-size: 3.5rem; font-weight: 800; color: #1a1a1a; margin-bottom: 60px;">Informacje kontaktowe</h1>
+
+        <div class="contact-cards-grid">
+            <div class="contact-info-card">
+                <div class="contact-icon-circle"><i class="fas fa-building"></i></div>
+                <div class="contact-card-text">
+                    <h3 id="card-factory-title">Biuro / Magazyn</h3>
+                    <p>Bartycka 24/26, Pawilon 10A</p>
+                    <p>00-716 Warszawa</p>
+                </div>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-icon-circle"><i class="fas fa-phone-alt"></i></div>
+                <div class="contact-card-text">
+                    <h3 id="card-phone-title">Telefon</h3>
+                    <p>+48 791 179 394</p>
+                    <p>+48 733 596 117</p>
+                    <p>+48 519 648 311</p>
+                </div>
+            </div>
+
+            <div class="contact-info-card">
+                <div class="contact-icon-circle"><i class="fas fa-clock"></i></div>
+                <div class="contact-card-text">
+                    <h3 id="card-schedule-title">Godziny otwarcia</h3>
+                    <p id="schedule-days">Poniedziałek - Sobota</p>
+                    <p>09:00 - 17:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<section class="franchise-contact-section reveal">
+    <div class="container" style="display: block;">
+        <div style="text-align: center; margin-bottom: 40px;">
+             <h1 id="fran-meet-title">Formularz kontaktowy</h1>
+        </div>
+   <div class="contact-form-wrapper">
+            <div class="green-top-border"></div>
+            <h2 id="form-title">Napisz do nas</h2>
+            <form id="contact-form">
+                <input type="text" name="name" id="name-field" placeholder="Twoje imię" required>
+                <input type="text" name="surname" id="fran-surname" placeholder="Nazwisko" required>
+                <input type="text" name="address" id="fran-address" placeholder="Adres" style="grid-column: span 2;">
+                <input type="text" name="city" id="fran-city" placeholder="Miejscowość">
+                <input type="text" name="province" id="fran-province" placeholder="Województwo">
+                <input type="email" name="email" id="email-field" placeholder="Twój E-mail" required>
+               <input type="tel" name="phone" id="phone-field" placeholder="Numer telefonu" required>
+               <textarea name="message" id="fran-msg" rows="4" placeholder="Zapytanie" style="grid-column: span 2;"></textarea>
+               <div class="privacy-container-fixed">
+    <input type="checkbox" id="privacy-fran" required>
+    <label for="privacy-fran" id="fran-privacy-label">Akceptuję politykę prywatności Jafep.</label>
+</div>
+       
+                
+<button type="submit" class="btn-lift" id="send-btn">
+                    <span>Wyślij wiadomość</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="contact-map-section-wide reveal">
+    <div class="map-container-wide">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2445.185790693575!2d21.054378977114686!3d52.20365735956037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecd92209c1593%3A0x7e70404097457788!2sBartycka%2024%2F26%2C%2000-716%20Warszawa!5e0!3m2!1spl!2spl!4v1712065000000!5m2!1spl!2spl" 
+            width="100%" 
+            height="500" 
+            style="border:0; display:block;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<div id="thank-you-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); background:white; padding:40px; border-radius:15px; box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:9999; text-align:center; min-width: 320px; border-top: 5px solid #e30613;">
+    <i class="fas fa-check-circle" style="color: #28a745; font-size: 3.5rem; margin-bottom: 20px;"></i>
+    <h3 id="modal-title" style="margin: 10px 0; font-size: 1.8rem; color: #333;">Dziękujemy!</h3>
+    <p id="modal-text" style="color: #666; line-height: 1.5;">Twoja wiadomość została wysłana.<br>Skontaktujemy się z Tobą wkrótce.</p>
+    <button onclick="document.getElementById('thank-you-modal').style.display='none'" class="btn" style="margin-top: 25px; padding: 10px 40px;">OK</button>
+</div>
+
+
+<script>
+     const translations = {
+        pl: {
+            menuAbout: "O nas", menuProducts: "Produkty", menuContact: "Kontakt", searchPlace: "Szukaj...", "menu-products": "Produkty", 
+            "menu-where": "Gdzie kupić",
+            "menu-franchise": "Franczyza",
+            "menu-blog": "Blog",
+            btnMoreAbout: "WIĘCEJ O JAFEP",
+            heroTitle: "Hiszpańskie Tradycje.<br>Europejskie standardy.",
+            heroSub: "Farby, laki i gruntówki do zastosowań przemysłowych i cywilnych.",
+            contactBtn: "Zapytaj o ofertę", productsTitle: "Nasze Rozwiązania", productsSub: "Hiszpańska jakość dla każdego projektu",
+            whyTitle: "Dlaczego Jafep?",
+            whyItem1: "<strong>Europejska jakość</strong> – standardy potwierdzone certyfikatami.",
+            whyItem2: "<strong>Konkurencyjne ceny</strong> – prosto od hiszpańskiego producenta.",
+            whyItem3: "<strong>Współpraca hurtowa</strong> – specjalna oferta dla firm budowlanych.",
+            whyItem4: "<strong>Szybkie dostawy</strong> – logistyka na najwyższym poziomie.",
+            whyItem5: "<strong>Nowoczesność</strong> – oparte na nanotechnologii i ekomateriałach.",
+            contactTitle: "Kontakt", formTitle: "Napisz do nas",
+            namePlace: "Twoje imię", emailPlace: "Twój E-mail", msgPlace: "Twoja wiadomość",
+            phonePlace: "Numer Telefonu",
+            sendBtn: "Wyślij wiadomość", sendingBtn: "Wysyłanie...",
+            modalTitle: "Dziękujemy!", modalText: "Twoja wiadomość została wysłana.<br>Skontaktujemy się z Tobą wkrótce.",
+            feat1Title: "Szybka dostawa", feat1Text: "Realizacja zamówień w krótkim czasie.",
+            feat2Title: "Ekologia", feat2Text: "Produkty bezpieczne dla środowiska.",
+            feat3Title: "Innowacje R+D", feat3Text: "Ciągłe badania nad recepturami.",
+            feat4Title: "Gwarancja", feat4Text: "Hiszpańskie standardy produkcji.",
+            choiceDistTitle: "Chcę zostać dystrybutorem",
+            choiceDistText: "Dołącz do naszej sieci sprzedaży i rozwijaj swój biznes z Jafep.",
+            choiceDistMore: "Więcej informacji",
+             choiceConsTitle: "Chcę zostać konsumentem",
+            choiceConsText: "Wybierz najlepsze farby dla swojego domu lub projektu.",
+            choiceConsMore: "Więcej informacji",
+            franPromoTitle: "Twój własny biznes z Jafep",
+            franPromoText: "Otwórz punkt sprzedaży pod marką lidera rynku. Zapewniamy wsparcie, szkolenia i sprawdzony model biznesowy.",
+            franPromoBtn: "Dowiedz się więcej o franczyzie",
+            "news-title": "Aktualności",
+            "news-1-head": "Do zobaczenia wkrótce!)",
+            news1Text: "Przygotowujemy dla Was coś wyjątkowego. Bądźcie czujni!",
+            reviewsTitle: "Opinie",
+            revMore: "Dowiedz się więcej",
+            footerDesc: "Hiszpańska tradycja i nowoczesna technologia w produkcji farb i lakierów.",
+            footerNav: "Menu",
+            footerLegal: "Info",
+            footerContact: "Kontakt",
+            footerRights: "Wszystkie prawa zastrzeżone.",
+            privacyPolicy: "Privacy Policy",
+            cookiePolicy: "Cookie Policy",
+            legalNotice: "Legal Notice",
+            choiceSubtitle: "Punkty sprzedaży",
+            choiceMainTitle: "Wysokiej jakości farby",
+            choiceMoreBtn: "Więcej informacji",
+            contactSubtitle: "Kontakt z nami",
+            contactDistQuestion: "Zainteresowany zostaniem dystrybutorem Jafep?",
+            contactDistDesc: "Jeśli jesteś zainteresowany dystrybucją naszych produktów lub masz inne pytania lub sugestie, wypełnij formularz, a my skontaktujemy się z Tobą najszybciej jak to możliwe.",
+            tgHelp: "Potrzebujesz pomocy? <strong>Napisz do nas</strong>",
+            "menu-catalogues": "Katalogi",
+            "privacyPolicy": "Polityka prywatności",
+        "cookiePolicy": "Polityka cookies",
+        "legalNotice": "Nota prawna",
+        "prod-1-title": "Farby Elewacyjne",
+        "prod-1-text": "Maksymalna ochrona budynków przed warunkami atmosferycznymi. Legendarny Pétrex 5.",
+        "prod-2-title": "Farby do Wnętrz",
+        "prod-2-text": "Ekologiczne i trwałe farby do salonów, kuchni i obiektów użyteczności publicznej.",
+        "prod-3-title": "Linia Przemysłowa",
+        "prod-3-text": "Specjalistyczne powłoki antykorozyjne i lakiery dla profesjonalistów.",
+        "prodSoon": "Wkrótce в ofercie →",
+        "news-1-text": "Odkryj innowacyjne rozwiązania dla Twojego domu...",
+        "news-2-head": "Jafep na targach w Warszawie",
+        "news-2-text": "Relacja z najważniejszego wydarzenia branżowego roku...",
+        "user-name-1": "Marek Wiśniewski",
+        "rev-1-text": '"Najlepsza jakość krycia, jaką spotkałem. Farba Jafep to strzał w dziesiątkę!"',
+         "card-iso-text": "System Jakości i Zaangażowania Środowiskowego (ISO 9001 i ISO 14001)",
+            "card-rd-text": "Badania i Rozwój R&D",
+            "cat-subtitle": "Farby Jafep",
+"cat-title": "Katalogi PDF",
+"cat-desc": "Sprawdź lub pobierz nasze katalogi w formacie PDF.",
+"cat-btn": "Zobacz katalogi",
+        
+        // Страница Контакты
+        "contactTag": "Kontakt", "contactMainTitle": "Informacje kontaktowe",
+        "cardFactory": "Biuro / Magazyn", "cardPhone": "Telefon", "cardSchedule": "Godziny otwarcia", "scheduleDays": "Poniedziałek - Sobota",
+        
+        // Форма
+        "form-title": "Napisz do nas", "fran-meet-title": "Formularz kontaktowy",
+        "namePlace": "Twoje imię", "fran-surname": "Nazwisko", "fran-address": "Adres", "fran-city": "Miejscowość", 
+        "fran-province": "Województwo", "emailPlace": "Twój E-mail", "phonePlace": "Numer telefonu", "fran-msg": "Zapytanie",
+        "fran-privacy-label": "Akceptuję politykę prywatności Jafep.", "sendBtn": "Wyślij wiadomość", "sendingBtn": "Wysyłanie...",
+        "modal-title": "Dziękujemy!", "modal-text": "Twoja wiadomość została wysłana.<br>Skontaktujemy się z Tobą wkrótce.",
+        "menu-where": "Gdzie kupić?",
+        "menu-where-cons": "Jestem konsumentem",
+        "menu-where-dist": "Jestem dystrybutorem",
+
+        
+    // ...
+        },
+        en: {
+            menuAbout: "About us", menuProducts: "Products", menuContact: "Contact", searchPlace: "Search...",
+            "menu-where": "Where to buy",
+            "menu-franchise": "Franchise",
+            "menu-blog": "Blog",
+            btnMoreAbout: "MORE ABOUT JAFEP",
+            "products-title": "Our Solutions",
+            "products-sub": "Spanish quality for every project",
+            "card-iso-text": "Quality and Environmental Commitment System (ISO 9001 and ISO 14001)",
+            "card-rd-text": "Research and Development R&D",
+            heroTitle: "Spanish Traditions.<br>European standards.",
+            heroSub: "Paints, varnishes and primers for industrial and civil applications.",
+            contactBtn: "Get an offer", productsTitle: "Our Solutions", productsSub: "Spanish quality for every project",
+            whyTitle: "Why Jafep?",
+            whyItem1: "<strong>European quality</strong> – standards confirmed by certificates.",
+            whyItem2: "<strong>Competitive prices</strong> – straight from the Spanish manufacturer.",
+            whyItem3: "<strong>Wholesale cooperation</strong> – special offer for construction companies.",
+            whyItem4: "<strong>Fast deliveries</strong> – logistics at the highest level.",
+            whyItem5: "<strong>Modernity</strong> – based on nanotechnology and eco-materials.",
+            contactTitle: "Contact", formTitle: "Write to us",
+            namePlace: "Your name", emailPlace: "Your email", msgPlace: "Your message",
+            phonePlace: "Phone Number",
+            sendBtn: "Send message", sendingBtn: "Sending...",
+            modalTitle: "Thank You!", modalText: "Your message has been sent.<br>We will contact you shortly.",
+            feat1Title: "Fast delivery", feat1Text: "Fulfilling orders in the shortest possible time",
+            feat2Title: "Eco-friendly products", feat2Text: "Health-safe paints",
+            feat3Title: "R&D innovation", feat3Text: "Ongoing formulation research",
+            feat4Title: "Quality guarantee", feat4Text: "Spanish production standards",
+            choiceDistTitle: "I want to become a distributor,",
+            choiceDistTitle: "I want to become a distributor,",
+            choiceDistText: "Join our distribution network and grow your business with Jafep,",
+            choiceDistMore: "More information,",
+            choiceConsTitle: "I want to become a consumer,",
+            choiceConsText: "Choose the best paints for your home or project,",
+            choiceConsMore: "More information",
+            franPromoTitle: "Your Own Business with Jafep",
+            franPromoText: "Open a sales point under the market leader's brand. We provide support, training, and a proven business model.",
+            franPromoBtn: "Learn more about franchise",
+            "news-title": "News",
+            "news-1-head": "See you soon!)",
+            news1Text: "We're preparing something special for you. Stay tuned!",
+            reviewsTitle: "Reviews",
+            revMore: "Learn more",
+            footerDesc: "Spanish traditions and modern technologies in the production of paints and varnishes,",
+            footerNav: "Menu",
+            footerLegal: "Info",
+            footerContact: "Contact",
+            footerRights: "All rights reserved,",
+            privacyPolicy: "Privacy Policy,",
+            cookiePolicy: "Cookie Policy,",
+            legalNotice: "Legal Information",
+            choiceSubtitle: "Points of Sale",
+            choiceMainTitle: "High-Quality Paints",
+            choiceMoreBtn: "Discover more",
+            contactSubtitle: "Contact Us",
+            contactDistQuestion: "Want to become a Jafep distributor?",
+            contactDistDesc: "If you are interested in becoming a distributor of our products, or if you have any other questions or suggestions, please fill out the form and we will get back to you as soon as possible.",
+            tgHelp: "Need Help? <strong>Chat with us</strong>" ,
+            "menu-catalogues": "Catalogue",
+            privacyPolicy: "Privacy Policy", 
+            choiceSubtitle: "Points of Sale", 
+            legalNotice: "Legal information",
+            "prod-1-title": "Facade Paints",
+        "prod-1-text": "Maximum protection of buildings against weather conditions. Legendary Pétrex 5.",
+        "prod-2-title": "Interior Paints",
+        "prod-2-text": "Eco-friendly and durable paints for living rooms, kitchens and public buildings.",
+        "prod-3-title": "Industrial Line",
+        "prod-3-text": "Specialized anti-corrosion coatings and varnishes for professionals.",
+        "prodSoon": "Coming soon →",
+        "news-1-text": "Discover innovative solutions for your home...",
+        "news-2-head": "Jafep at the trade fair in Warsaw",
+        "news-2-text": "Report from the most important industry event of the year...",
+        "user-name-1": "Mark Wisniewski",
+        "rev-1-text": '"The best coverage quality I have encountered. Jafep paint is a bullseye!"',
+        "cat-subtitle": "Jafep Paints",
+"cat-title": "PDF Catalogs",
+"cat-desc": "Check or download our catalogs in PDF format.",
+"cat-btn": "View catalogs",
+        "contactTag": "Contact", "contactMainTitle": "Contact Information",
+        "cardFactory": "Office / Warehouse", "cardPhone": "Phone", "cardSchedule": "Opening Hours", "scheduleDays": "Monday - Saturday",
+        "form-title": "Write to us", "fran-meet-title": "Contact Form",
+        "namePlace": "First Name", "fran-surname": "Last Name", "fran-address": "Address", "fran-city": "City", 
+        "fran-province": "Province", "emailPlace": "Your Email", "phonePlace": "Phone Number", "fran-msg": "Inquiry",
+        "fran-privacy-label": "I accept Jafep privacy policy.", "sendBtn": "Send Message", "sendingBtn": "Sending...",
+        "modal-title": "Thank You!", "modal-text": "Your message has been sent.<br>We will contact you shortly.",
+        "menu-where": "Where to buy?",
+        "menu-where-cons": "I am a consumer",
+        "menu-where-dist": "I am a distributor"
+          
+        },
+        ru: {
+            menuAbout: "О нас", menuProducts: "Продукты", menuContact: "Контакты", searchPlace: "Поиск...",
+            "menu-where": "Где купить",
+            "menu-franchise": "Франшиза",
+            "menu-blog": "Блог",
+            btnMoreAbout: "ПОДРОБНЕЕ О JAFEP",
+            "products-title": "Наши решения",
+            "products-sub": "Испанское качество для любого проекта",
+            "card-iso-text": "Система качества и экологических обязательств (ISO 9001 и ISO 14001)",
+            "card-rd-text": "Исследования и разработки (НИОКР)",
+            heroTitle: "Испанские традиции.<br>Европейские стандарты.",
+            heroSub: "Краски, лаки и грунтовки для промышленного и гражданского применения.",
+            contactBtn: "Запросить предложение", productsTitle: "Наши решения", productsSub: "Испанское качество для любого проекта",
+            whyTitle: "Почему Jafep?",
+            whyItem1: "<strong>Европейское качество</strong> – стандарты, подтвержденные сертификатами.",
+            whyItem2: "<strong>Конкурентные цены</strong> – напрямую от испанского производителя.",
+            whyItem3: "<strong>Оптовое сотрудничество</strong> – спецпредложение для стройфирм.",
+            whyItem4: "<strong>Быстрая доставка</strong> – логистика на высшем уровне.",
+            whyItem5: "<strong>Современность</strong> – нанотехнологии и эко-материалы.",
+            contactTitle: "Контакт", formTitle: "Напишите нам",
+            namePlace: "Ваше имя", emailPlace: "Ваш E-mail", msgPlace: "Ваше сообщение",
+            phonePlace: "Номер телефона",
+            sendBtn: "Отправить сообщение", sendingBtn: "Отправка...",
+            modalTitle: "Спасибо!", modalText: "Ваше сообщение было отправлено.<br>Мы свяжемся с вами в ближайшее время.",
+            feat1Title: "Быстрая доставка", feat1Text: "Выполнение заказов в кратчайшие сроки.",
+            feat2Title: "Эко-продукты", feat2Text: "Краски, безопасные для здоровья.",
+            feat3Title: "Инновации R+D", feat3Text: "Постоянные исследования рецептур.",
+            feat4Title: "Гарантия качества", feat4Text: "Испанские стандарты производства.",
+            choiceDistTitle: "Хочу стать дистрибьютором",
+            choiceDistText: "Присоединяйтесь к нашей торговой сети и развивайте бизнес с Jafep.",
+            choiceDistMore: "Больше информации",
+            choiceConsTitle: "Хочу стать потребителем",
+            choiceConsText: "Выбирайте лучшие краски для своего дома или проекта.",
+            choiceConsMore: "Больше информации",
+            franPromoTitle: "Ваш собственный бизнес с Jafep",
+            franPromoText: "Откройте точку продаж под брендом лидера рынка. Мы обеспечим поддержку, обучение и готовую модель бизнеса.",
+            franPromoBtn: "Узнать больше о франшизе",
+            "news-title": "Новости",
+            "news-1-head": "Скоро увидимся!)",
+            news1Text: "Мы готовим для вас кое-что особенное. Следите за обновлениями!",
+            reviewsTitle: "Отзывы",
+            revMore: "Узнать больше",
+            footerDesc: "Испанские традиции и современные технологии в производстве красок и лаков.",
+            footerNav: "Меню",
+            footerLegal: "Инфо",
+            footerContact: "Контакт",
+            footerRights: "Все права защищены.",
+            privacyPolicy: "Политика конфиденциальности",
+            cookiePolicy: "Политика Cookie",
+            legalNotice: "Правовая информация",
+            choiceSubtitle: "Точки продаж",
+            choiceMainTitle: "Высококачественные краски",
+            choiceMoreBtn: "Узнать больше",
+            contactSubtitle: "Связаться с нами",
+            contactDistQuestion: "Хотите стать дистрибьютором Jafep?",
+            contactDistDesc: "Если вас интересует возможность стать дистрибьютором нашей продукции, или если у вас есть другие вопросы или предложения, пожалуйста, заполните форму, и мы свяжемся с вами в кратчайшие сроки.",
+            tgHelp: "Нужна помощь? <strong>Напишите нам</strong>",
+            "menu-catalogues": "Каталоги",
+            privacyPolicy: "Политика конфиденциальности", 
+            cookiePolicy: "Политика Cookie", 
+            legalNotice: "Правовая информация",
+            "prod-1-title": "Фасадные краски",
+        "prod-1-text": "Максимальная защита зданий от погодных условий. Легендарный Pétrex 5.",
+        "prod-2-title": "Интерьерные краски",
+        "prod-2-text": "Экологичные и долговечные краски для гостиных, кухонь и общественных зданий.",
+        "prod-3-title": "Промышленная линия",
+        "prod-3-text": "Специализированные антикоррозийные покрытия и лаки для профессионалов.",
+        "prodSoon": "Скоро в продаже →",
+        "news-1-text": "Откройте для себя инновационные решения для вашего дома...",
+        "news-2-head": "Jafep на выставке в Варшаве",
+        "news-2-text": "Отчет о самом важном отраслевом событии года...",
+        "user-name-1": "Марек Вишневский",
+        "rev-1-text": '«Лучшее качество покрытия, которое я встречал. Краска Jafep — это попадание в десятку!»',
+ "cat-subtitle": "Краски Jafep",
+"cat-title": "PDF Каталоги",
+"cat-desc": "Посмотрите или скачайте наши каталоги в формате PDF.",
+"cat-btn": "Смотреть каталоги",
+        "contactTag": "Контакт", "contactMainTitle": "Контактная информация",
+        "cardFactory": "Офис / Склад", "cardPhone": "Телефон", "cardSchedule": "График работы", "scheduleDays": "Понедельник - Суббота",
+        "form-title": "Напишите нам", "fran-meet-title": "Контактная форма",
+        "namePlace": "Ваше имя", "fran-surname": "Фамилия", "fran-address": "Адрес", "fran-city": "Город", 
+        "fran-province": "Область", "emailPlace": "Ваш E-mail", "phonePlace": "Номер телефона", "fran-msg": "Запрос",
+        "fran-privacy-label": "Я принимаю политику конфиденциальности Jafep.", "sendBtn": "Отправить сообщение", "sendingBtn": "Отправка...",
+        "modal-title": "Спасибо!", "modal-text": "Ваше сообщение отправлено.<br>Мы свяжемся с вами в ближайшее время.",
+        "menu-where": "Где купить?",
+        "menu-where-cons": "Я потребитель",
+        "menu-where-dist": "Я дистрибьютор",
+
+
+        },
+        ua: {
+            menuAbout: "Про нас", menuProducts: "Продукти", menuContact: "Контакти", searchPlace: "Пошук...",
+            "menu-where": "Де купити",
+            "menu-franchise": "Франшиза",
+            "menu-blog": "Блог",
+            btnMoreAbout: "ДЕТАЛЬНІШЕ ПРО JAFEP",
+            "products-title": "Наші рішення",
+            "products-sub": "Іспанська якість для будь-якого проекту",
+            "card-iso-text": "Система якості та екологічних зобов'язань (ISO 9001 та ISO 14001)",
+            "card-rd-text": "Дослідження та розробки (НДДКР)",
+            heroTitle: "Іспанські традиції.<br>Європейські стандарти.",
+            heroSub: "Фарби, лаки та ґрунтовки для промислового та цивільного застосування.",
+            contactBtn: "Запитати пропозицію", productsTitle: "Наші рішення", productsSub: "Іспанська якість для будь-якого проекту",
+            whyTitle: "Чому Jafep?",
+            whyItem1: "<strong>Європейська якість</strong> – стандарти, підтверджені сертифікатами.",
+            whyItem2: "<strong>Конкурентні ціни</strong> – напряму від іспанського виробника.",
+            whyItem3: "<strong>Оптова співпраця</strong> – спецпропозиція для будфірм.",
+            whyItem4: "<strong>Швидка доставка</strong> – логістика на найвищому рівні.",
+            whyItem5: "<strong>Сучасність</strong> – нанотехнології та еко-матеріали.",
+            contactTitle: "Контакт", formTitle: "Напишіть нам",
+            namePlace: "Ваше ім'я", emailPlace: "Ваша електронна адреса", msgPlace: "Ваше повідомлення",
+            phonePlace: "Номер телефону",
+            sendBtn: "Надіслати повідомлення", sendingBtn: "Відправка...",
+            modalTitle: "Дякуємо!", modalText: "Ваше повідомлення було надіслано.<br>Ми зв'яжемося з вами найближчим часом.",
+            feat1Title: "Швидка доставка", feat1Text: "Виконання замовлень у найкоротші терміни.",
+            feat2Title: "Еко-продукти", feat2Text: "Фарби, безпечні для здоров'я.",
+            feat3Title: "Інновації R+D", feat3Text: "Постійні дослідження рецептур.",
+            feat4Title: "Гарантія якості", feat4Text: "Іспанські стандарти виробництва.",
+            choiceDistTitle: "Хочу стати дистриб'ютором",
+            choiceDistText: "Приєднуйтесь до нашої торгової мережі та розвивайте бізнес з Jafep.",
+            choiceDistMore: "Більше інформації",
+            choiceConsTitle: "Хочу стати споживачем",
+            choiceConsText: "Вибирайте найкращі фарби для свого будинку чи проекту.",
+            choiceConsMore: "Більше інформації",
+            franPromoTitle: "Ваш власний бізнес із Jafep",
+            franPromoText: "Відкрийте точку продажу під брендом лідера ринку. Ми забезпечимо підтримку, навчання та готову модель бізнесу.",
+            franPromoBtn: "Дізнатися більше про франшизу",
+            "news-title": "Новини",
+            "news-1-head": "Скоро побачимось!",
+             news1Text: "Ми готуємо для вас дещо особливе. Слідкуйте за оновленнями!",
+            reviewsTitle: "Відгуки",
+            revMore: "Дізнатися більше",
+            footerDesc: "Іспанські традиції та сучасні технології у виробництві фарб та лаків.",
+            footerNav: "Меню",
+            footerLegal: "Інфо",
+            footerContact: "Контакт",
+            footerRights: "Всі права захищені.",
+            privacyPolicy: "Політика конфіденційності",
+            cookiePolicy: "Політика cookie",
+            legalNotice: "Правова інформація",
+            choiceSubtitle: "Точки продажу",
+            choiceMainTitle: "Високоякісні фарби",
+            choiceMoreBtn: "Дізнатися більше",
+            contactSubtitle: "Зв'язатися з нами",
+            contactDistQuestion: "Хочете стати дистриб'ютором Jafep?",
+            contactDistDesc: "Якщо ви зацікавлені стати дистриб'ютором нашої продукції, або якщо у вас є інші запитання чи пропозиції, будь ласка, заповніть форму, і ми зв'яжемося з вами якомога швидше.",
+            tgHelp: "Потрібна допомога? <strong>Напишіть нам</strong>",
+            "menu-catalogues": "Каталоги",
+            privacyPolicy: "Політика конфіденційності", 
+            cookiePolicy: "Політика Cookie", 
+            legalNotice: "Правова інформація",
+            "prod-1-title": "Фасадні фарби",
+        "prod-1-text": "Максимальний захист будівель від погодних умов. Легендарний Pétrex 5.",
+        "prod-2-title": "Інтер'єрні фарби",
+        "prod-2-text": "Екологічні та довговічні фарби для віталень, кухонь та громадських приміщень.",
+        "prod-3-title": "Промислова лінія",
+        "prod-3-text": "Спеціалізовані антикорозійні покриття та лаки для професіоналів.",
+        "prodSoon": "Скоро у продажу →",
+        "news-1-text": "Відкрийте для себе інноваційні рішення для вашого дому...",
+        "news-2-head": "Jafep на виставці у Варшаві",
+        "news-2-text": "Звіт про найважливішу галузеву подію року...",
+        "user-name-1": "Марек Вишневський",
+        "rev-1-text": '«Найкраща якість покриття, яку я зустрічав. Фарба Jafep — це влучання в десятку!»',
+        "cat-subtitle": "Фарби Jafep",
+        "cat-title": "PDF Каталоги",
+        "cat-desc": "Перегляньте або завантажте наші каталоги у форматі PDF.",
+        "cat-btn": "Переглянути каталоги",
+        "contactTag": "Контакт", "contactMainTitle": "Контактна інформація",
+        "cardFactory": "Офіс / Склад", "cardPhone": "Телефон", "cardSchedule": "Графік роботи", "scheduleDays": "Понеділок - Субота",
+        "form-title": "Напишіть нам", "fran-meet-title": "Контактна форма",
+        "namePlace": "Ваше ім'я", "fran-surname": "Прізвище", "fran-address": "Адреса", "fran-city": "Місто", 
+        "fran-province": "Область", "emailPlace": "Ваш E-mail", "phonePlace": "Номер телефону", "fran-msg": "Запит",
+        "fran-privacy-label": "Я приймаю політику конфіденційності Jafep.", "sendBtn": "Надіслати повідомлення", "sendingBtn": "Надсилання...",
+        "modal-title": "Дякуємо!", "modal-text": "Ваше повідомлення надіслано.<br>Ми зв'яжемося з вами найближчим часом.",
+        "menu-where": "Де купити?",
+        "menu-where-cons": "Я споживач",
+        "menu-where-dist": "Я дистриб'ютор",
+        }
+    };
+
+let currentLang = 'pl';
+
+    function changeLang(lang, event) {
+        currentLang = lang;
+        const t = translations[lang];
+        if (!t) return;
+
+        function changeLang(lang, event) {
+    localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
+    currentLang = lang;
+    const t = translations[lang];
+    if (!t) return;
+
+      function toggleMobileMenu() {
+    const nav = document.querySelector('.custom-nav');
+    const icon = document.querySelector('.menu-toggle i');
+    
+    if (nav && icon) {
+        nav.classList.toggle('mobile-active');
+        
+        // Проверяем, открыто ли меню
+        if (nav.classList.contains('mobile-active')) {
+            // Если открыто - ставим крестик
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            // Если закрыто - возвращаем полоски
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    }
+}
+    
+    // ... весь твой остальной код перевода (меню, заголовки и т.д.) ...
+}
+
+        const fWhereText = document.getElementById('f-menu-where-text');
+if (fWhereText) fWhereText.innerText = t["menu-where"];
+
+const fWhereCons = document.getElementById('f-menu-where-cons');
+if (fWhereCons) fWhereCons.innerText = t["menu-where-cons"];
+
+const fWhereDist = document.getElementById('f-menu-where-dist');
+if (fWhereDist) fWhereDist.innerText = t["menu-where-dist"];
+
+        const menuWhereText = document.getElementById('menu-where-text');
+    if (menuWhereText && t["menu-where"]) {
+        menuWhereText.innerText = t["menu-where"];
+    }
+
+    // 2. Пункты выпадающего списка
+    const consLink = document.getElementById('menu-where-cons');
+    if (consLink && t["menu-where-cons"]) {
+        consLink.innerText = t["menu-where-cons"];
+    }
+
+    const distLink = document.getElementById('menu-where-dist');
+    if (distLink && t["menu-where-dist"]) {
+        distLink.innerText = t["menu-where-dist"];
+    }
+
+        const mTitle = document.getElementById('modal-title');
+    if (mTitle && t.modalTitle) {
+        mTitle.innerText = t.modalTitle;
+    }
+
+    const mText = document.getElementById('modal-text');
+    if (mText && t.modalText) {
+        mText.innerHTML = t.modalText; // innerHTML, чтобы работал <br>
+    }
+
+        const textIds = [
+        'contact-tag', 'contact-main-title', 'card-factory-title', 
+        'card-phone-title', 'card-schedule-title', 'schedule-days', 
+        'form-title', 'fran-meet-title', 'fran-privacy-label'
+    ];
+
+    textIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+            // Убираем дефисы для поиска в объекте переводов (например contact-tag -> contactTag)
+            const key = id.replace(/-([a-z])/g, g => g[1].toUpperCase()).replace('Card', 'card').replace('Schedule', 'schedule').replace('Contact', 'contact');
+            
+            // Если ключ совпадает с твоим списком напрямую:
+            if (t[id]) el.innerText = t[id]; 
+            else if (t['contactTag'] && id === 'contact-tag') el.innerText = t.contactTag;
+            else if (t['contactMainTitle'] && id === 'contact-main-title') el.innerText = t.contactMainTitle;
+            else if (t['cardFactory'] && id === 'card-factory-title') el.innerText = t.cardFactory;
+            else if (t['cardPhone'] && id === 'card-phone-title') el.innerText = t.cardPhone;
+            else if (t['cardSchedule'] && id === 'card-schedule-title') el.innerText = t.cardSchedule;
+            else if (t['scheduleDays'] && id === 'schedule-days') el.innerText = t.scheduleDays;
+        }
+    });
+
+    const inputMap = {
+        'name-field': t.namePlace,
+        'fran-surname': t['fran-surname'],
+        'fran-address': t['fran-address'],
+        'fran-city': t['fran-city'],
+        'fran-province': t['fran-province'],
+        'email-field': t.emailPlace,
+        'phone-field': t.phonePlace,
+        'fran-msg': t['fran-msg']
+    };
+
+    for (let id in inputMap) {
+        const el = document.getElementById(id);
+        if (el && inputMap[id]) {
+            el.placeholder = inputMap[id];
+        }
+    }
+
+    // Перевод кнопки (текст внутри span)
+    const btnSpan = document.querySelector('#send-btn span');
+    if (btnSpan && t.sendBtn) btnSpan.innerText = t.sendBtn;
+        
+        // 1. Меню
+        const menuIds = {
+            'menu-about': t.menuAbout,
+            'menu-products': t.menuProducts,
+            'menu-contact': t.menuContact,
+            'menu-catalogues': t["menu-catalogues"],
+            'menu-where': t["menu-where"],
+            'menu-franchise': t["menu-franchise"],
+            'menu-blog': t["menu-blog"]
+        };
+        for (let id in menuIds) {
+            const el = document.getElementById(id);
+            if (el && menuIds[id]) el.innerText = menuIds[id];
+        }
+        if(document.getElementById('menu-home')) document.getElementById('menu-home').innerHTML = '<i class="fas fa-home"></i>';
+
+        // 2. Текстовые блоки
+        if(document.querySelector('.hero h1')) document.querySelector('.hero h1').innerHTML = t.heroTitle;
+        if(document.querySelector('.hero p')) document.querySelector('.hero p').innerText = t.heroSub;
+        if(document.querySelector('.hero .btn')) document.querySelector('.hero .btn').innerText = t.contactBtn;
+        if(document.getElementById('why-title')) document.getElementById('why-title').innerText = t.whyTitle;
+        if(document.getElementById('btnMoreAbout')) document.getElementById('btnMoreAbout').innerText = t.btnMoreAbout;
+
+        const productsTitle = document.getElementById('products-title');
+const productsSub = document.getElementById('products-sub');
+
+
+if (productsTitle && t.productsTitle) {
+    productsTitle.innerText = t.productsTitle;
+}
+if (productsSub && t.productsSub) {
+    productsSub.innerText = t.productsSub;
+}
+
+        const whyItems = document.querySelectorAll('.why-text ul li');
+        const items = [t.whyItem1, t.whyItem2, t.whyItem3, t.whyItem4, t.whyItem5];
+        whyItems.forEach((li, index) => {
+            if (items[index]) li.innerHTML = `<span class="check">✔</span> ${items[index]}`;
+        });
+
+        // 3. Продукты
+        for (let i = 1; i <= 3; i++) {
+            const titleId = `prod-${i}-title`;
+            const textId = `prod-${i}-text`;
+            if (document.getElementById(titleId) && t[titleId]) document.getElementById(titleId).innerText = t[titleId];
+            if (document.getElementById(textId) && t[textId]) document.getElementById(textId).innerText = t[textId];
+        }
+        const soonLabels = document.querySelectorAll('.prod-soon');
+        soonLabels.forEach(label => { if (t.prodSoon) label.innerText = t.prodSoon; });
+
+        // 4. Секции (Features, Choice, Franchise, Social)
+        for (let i = 1; i <= 4; i++) {
+            if(document.getElementById(`feat-${i}-title`)) document.getElementById(`feat-${i}-title`).innerText = t[`feat${i}Title`];
+            if(document.getElementById(`feat-${i}-text`)) document.getElementById(`feat-${i}-text`).innerText = t[`feat${i}Text`];
+        }
+
+        // Перевод секции франшизы (текст и кнопка)
+if (document.getElementById('fran-promo-text')) {
+    document.getElementById('fran-promo-text').innerText = t["franPromoText"];
+}
+const franBtn = document.getElementById('fran-promo-btn');
+if (franBtn && franBtn.querySelector('span')) {
+    franBtn.querySelector('span').innerText = t["franPromoBtn"];
+}
+
+// Перевод заголовка формы и кнопки
+if (document.getElementById('form-title')) {
+    document.getElementById('form-title').innerText = t["formTitle"];
+}
+const sendBtn = document.getElementById('send-btn');
+if (sendBtn && sendBtn.querySelector('span')) {
+    sendBtn.querySelector('span').innerText = t["sendBtn"];
+}
+
+// Перевод подсказок (placeholder) - используем ТВОИ названия ключей
+if (document.getElementById('name-field')) {
+    document.getElementById('name-field').placeholder = t["namePlace"];
+}
+if (document.getElementById('email-field')) {
+    document.getElementById('email-field').placeholder = t["emailPlace"];
+}
+if (document.getElementById('msg-field')) {
+    document.getElementById('msg-field').placeholder = t["msgPlace"];
+}
+
+// Добавляем телефон (его не было в твоем списке, проверь наличие в translations)
+if (document.getElementById('phone-field')) {
+    document.getElementById('phone-field').placeholder = t["phonePlace"] || "Phone";
+
+}
+
+if (document.getElementById('contact-title')) {
+    document.getElementById('contact-title').innerText = t.contactTitle;
+}
+
+if (document.getElementById('phone-field')) {
+    document.getElementById('phone-field').placeholder = t.phonePlace || "Phone";
+}
+
+if (document.getElementById('cat-subtitle')) document.getElementById('cat-subtitle').innerText = t["cat-subtitle"];
+if (document.getElementById('cat-title')) document.getElementById('cat-title').innerText = t["cat-title"];
+if (document.getElementById('cat-desc')) document.getElementById('cat-desc').innerText = t["cat-desc"];
+if (document.getElementById('cat-btn')) document.getElementById('cat-btn').innerText = t["cat-btn"];
+
+
+// Перевод секции каталогов
+if (document.getElementById('cat-subtitle')) document.getElementById('cat-subtitle').innerText = t["cat-subtitle"];
+if (document.getElementById('cat-title')) document.getElementById('cat-title').innerText = t["cat-title"];
+if (document.getElementById('cat-desc')) document.getElementById('cat-desc').innerText = t["cat-desc"];
+if (document.getElementById('cat-btn')) document.getElementById('cat-btn').innerText = t["cat-btn"];
+
+        if(document.getElementById('choice-dist-title')) document.getElementById('choice-dist-title').innerText = t.choiceDistTitle;
+        if(document.getElementById('choice-dist-text')) document.getElementById('choice-dist-text').innerText = t.choiceDistText;
+        if(document.getElementById('choice-cons-title')) document.getElementById('choice-cons-title').innerText = t.choiceConsTitle;
+        if(document.getElementById('choice-cons-text')) document.getElementById('choice-cons-text').innerText = t.choiceConsText;
+        if(document.getElementById('fran-promo-title')) document.getElementById('fran-promo-title').innerText = t.franPromoTitle;
+        if(document.getElementById('news-title')) document.getElementById('news-title').innerText = t.newsTitle;
+        if(document.getElementById('news-1-head')) document.getElementById('news-1-head').innerText = t.news1Head;
+        if(document.getElementById('reviews-title')) document.getElementById('reviews-title').innerText = t.reviewsTitle;
+
+        // 5. Футер
+        if(document.getElementById('footer-desc')) document.getElementById('footer-desc').innerText = t.footerDesc;
+        if(document.getElementById('footer-nav-title')) document.getElementById('footer-nav-title').innerText = t.footerNav;
+        if(document.getElementById('footer-legal-title')) document.getElementById('footer-legal-title').innerText = t.footerLegal;
+        if(document.getElementById('footer-contact-title')) document.getElementById('footer-contact-title').innerText = t.footerContact;
+        if(document.getElementById('footer-rights')) document.getElementById('footer-rights').innerText = t.footerRights;
+        if(document.getElementById('choice-subtitle')) document.getElementById('choice-subtitle').innerText = t.choiceSubtitle;
+        if(document.getElementById('choice-main-title')) document.getElementById('choice-main-title').innerText = t.choiceMainTitle;
+        if(document.getElementById('choice-dist-more-btn')) document.getElementById('choice-dist-more-btn').innerText = t.choiceMoreBtn;
+        if(document.getElementById('choice-cons-more-btn')) document.getElementById('choice-cons-more-btn').innerText = t.choiceMoreBtn;
+        if(document.getElementById('contact-with-us')) document.getElementById('contact-with-us').innerText = t.contactSubtitle;
+        if(document.getElementById('contact-dist-question')) document.getElementById('contact-dist-question').innerText = t.contactDistQuestion;
+        if(document.getElementById('contact-dist-desc')) document.getElementById('contact-dist-desc').innerText = t.contactDistDesc;
+        if(document.getElementById('tg-tooltip-text')) document.getElementById('tg-tooltip-text').innerHTML = t.tgHelp;
+        if (document.getElementById('card-iso-text')) {
+document.getElementById('card-iso-text').innerText = t["card-iso-text"];
+    
+}
+if (document.getElementById('card-rd-text')) {
+    document.getElementById('card-rd-text').innerText = t["card-rd-text"];
+}
+
+        const newsTitle = document.getElementById('news-title');
+const newsHeader = document.getElementById('news-1-head');
+
+// Если элемент есть на странице И в переводах есть для него текст - меняем
+if (newsTitle && t["news-title"]) {
+    newsTitle.innerText = t["news-title"];
+}
+
+if (newsHeader && t["news-1-head"]) {
+    newsHeader.innerText = t["news-1-head"];
+}
+
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) searchInput.setAttribute('placeholder', t.searchPlace);
+
+        const footerLinks = {
+            'f-menu-about': 'menuAbout', 'f-menu-catalogues': 'menu-catalogues', 
+            'f-menu-products': 'menuProducts', 'f-menu-blog': 'menu-blog', 
+            'f-menu-contact': 'menuContact', 'f-legal-privacy': 'privacyPolicy', 
+            'f-legal-cookies': 'cookiePolicy', 'f-legal-notice': 'legalNotice', 
+            'f-menu-franchise': 'menu-franchise'
+        };
+
+        for(let id in footerLinks) {
+            const el = document.getElementById(id);
+            if(el && t[footerLinks[id]]) el.innerText = t[footerLinks[id]];
+        }
+
+        const allBtns = document.querySelectorAll('.lang-btn');
+        allBtns.forEach(b => b.classList.remove('active'));
+        if (event && event.target) {
+            event.target.classList.add('active');
+        } else {
+            allBtns.forEach(b => { if(b.innerText.toLowerCase() === lang.toLowerCase()) b.classList.add('active'); });
+        }
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('send-btn');
+            btn.disabled = true;
+            btn.innerText = translations[currentLang].sendingBtn;
+            fetch('https://formspree.io/f/xwvwlqzr', {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('thank-you-modal').style.display = 'block';
+                    this.reset();
+                }
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerText = translations[currentLang].sendBtn;
+            });
+        });
+    }
+
+   function startProductSlider() {
+    const slides = document.querySelectorAll('.gallery-wrapper .slide');
+    let currentSlide = 0;
+
+    if (slides.length === 0) return;
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000); // 5 секунд, чтобы успеть рассмотреть детали
+}
+
+document.addEventListener('DOMContentLoaded', startProductSlider);
+
+
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            } else {
+                reveals[i].classList.remove('active'); 
+            }
+        }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    function highlightCurrentPage() {
+    // Получаем имя текущего файла (например, franchise.html)
+    const currentPage = window.location.pathname.split("/").pop();
+    
+    // Если мы на главной (путь пустой или index.html)
+    const pageName = (currentPage === "" || currentPage === "index.html") ? "index.html" : currentPage;
+
+    // Список всех ссылок, которые нужно проверять (меню и футер)
+    const links = document.querySelectorAll('.custom-nav a, footer ul li a');
+
+    links.forEach(link => {
+        // Получаем имя файла из атрибута href
+        const linkPath = link.getAttribute('href');
+
+        // Если href ссылки совпадает с текущей страницей — красим
+        if (linkPath === pageName) {
+            link.classList.add('active-link');
+        } else {
+            link.classList.remove('active-link');
+        }
+    });
+}
+
+// Запускаем подсветку при загрузке страницы
+window.addEventListener('DOMContentLoaded', highlightCurrentPage);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем, какой язык был сохранен
+    const savedLang = localStorage.getItem('selectedLang');
+    
+    if (savedLang && translations[savedLang]) {
+        // Если нашли сохраненный — включаем его
+        changeLang(savedLang);
+    } else {
+        // Если зашли первый раз — ставим польский (или тот, что хочешь базовым)
+        changeLang('pl');
+    }
+});
+
+function toggleMobileMenu() {
+    const nav = document.querySelector('.custom-nav');
+    const btn = document.querySelector('.menu-toggle');
+    const icon = btn.querySelector('i');
+    
+    if (nav && icon) {
+        nav.classList.toggle('mobile-active'); // Показываем список
+        btn.classList.toggle('active');        // Запускаем вращение через CSS
+        
+        // Плавная замена иконки
+        if (nav.classList.contains('mobile-active')) {
+            icon.classList.replace('fa-bars', 'fa-xmark');
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+    }
+}
+
+</script>
+
+<footer style="background: #222; color: #fff; padding: 60px 0 20px;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-start;">
+
+        <footer class="mobile-footer" style="background: #222; color: #fff;">
+    <div class="container footer-container-mobile">
+        
+        <div style="flex: 1; min-width: 250px;">
+    <img src="img/footerlogo.png" alt="Jafep" class="footer-logo-img">
+    
+    <p id="footer-desc" style="font-size: 0.9rem; color: #ccc; margin-top: 20px;">
+        Hiszpańska tradycja i nowoczesna technologia w produkcji farb i lakierów. Jakość potwierdzona certyfikatami na całym świecie.
+    </p>
+</div>
+        <div style="flex: 1; min-width: 150px;">
+            <h4 id="footer-nav-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Menu</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                <li><a href="about.html" id="f-menu-about" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">O nas</a></li>
+                <li><a href="franchise.html" id="f-menu-franchise" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Franczyza</a></li>
+                <li class="dropdown footer-dropdown">
+            <a href="javascript:void(0)" class="dropbtn" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">
+                <span id="f-menu-where-text">Gdzie kupić?</span>
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="consumer.html" id="f-menu-where-cons">Jestem konsumentem</a>
+                <a href="distributor.html" id="f-menu-where-dist">Jestem dystrybutorem</a>
+            </div>
+        </li>
+                <li><a href="catalogues.html" id="f-menu-catalogues" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Katalogi</a></li>
+                <li><a href="products.html" id="f-menu-products" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Produkty</a></li>
+                <li><a href="blog.html" id="f-menu-blog" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Blog</a></li>
+                <li><a href="contact.html" id="f-menu-contact" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 150px;">
+            <h4 id="footer-legal-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Info</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                <li><a href="privacy.html" id="f-legal-privacy" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></li>
+                <li><a href="cookies.html" id="f-legal-cookies" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Polityka cookies</a></li>
+                <li><a href="legal.html" id="f-legal-notice" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Nota prawna</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <h4 id="footer-contact-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Kontakt</h4>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 791 179 394</p>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 733 596 117</p>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 519 648 311</p>
+            <p style="font-size: 0.9rem; color: #ccc;">jafeppolska@gmail.com</p>
+            <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 15px;">
+                <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
+                 <a href="#" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid #444; margin-top: 40px; padding-top: 20px; font-size: 0.8rem; color: #777;">
+        © 2026 Jafep Polska. <span id="footer-rights">Wszystkie prawa zastrzeżone.</span>
+    </div>
+</footer>
+
+
+<div class="tg-wrapper">
+    <div class="tg-tooltip" id="tg-tooltip-text">Potrzebujesz pomocy? <strong>Napisz do nas</strong></div>
+    <a href="https://t.me/+48791179394" class="tg-float" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+</div>
+
+</body>
+</html>
+
+

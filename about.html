@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jafep Polska | Hiszpańskie Tradycje, Europejskie Standardy</title>
+    <meta name="description" content="Poznaj historię Jafep — od małej rodzinnej firmy w Hiszpanii do lidera branży farb. Dowiedz się więcej o naszej pasji do jakości.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+</head>
+<body>
+
+
+<header class="main-header">
+    <div class="container">
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Jafep Polska Logo" class="hanging-logo">
+            </a>
+            <div class="menu-toggle" onclick="toggleMobileMenu()">
+        <i class="fas fa-bars"></i>
+    </div>
+        </div>
+
+
+        <nav class="custom-nav">
+            <ul>
+                <li><a href="index.html" id="menu-home"><i class="fas fa-home"></i></a></li>
+                <li><a href="about.html" id="menu-about">O nas</a></li>
+                <li><a href="catalogues.html" id="menu-catalogues">Katalogi</a></li>
+                <li><a href="products.html" id="menu-products">Produkty</a></li>
+               <li class="dropdown">
+    <a href="javascript:void(0)" class="dropbtn">
+        <span id="menu-where-text">Gdzie kupić?</span>
+        <i class="fas fa-chevron-down nav-arrow"></i>
+    </a>
+    <div class="dropdown-content">
+        <a href="consumer.html" id="menu-where-cons">Jestem konsumentem</a>
+        <a href="distributor.html" id="menu-where-dist">Jestem dystrybutorem</a>
+    </div>
+</li>
+                <li><a href="franchise.html" id="menu-franchise">Franczyza</a></li>
+                <li><a href="blog.html" id="menu-blog">Blog</a></li>
+                <li><a href="contact.html" id="menu-contact">Kontakt</a></li>
+            </ul>
+        </nav>
+
+        <div class="header-tools">
+            <div class="search-box">
+                <input type="text" id="search-input" placeholder="Szukaj...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="lang-switch">
+                <span onclick="changeLang('pl', event)" class="lang-btn active">PL</span>
+                <span onclick="changeLang('en', event)" class="lang-btn">EN</span>
+                <span onclick="changeLang('ru', event)" class="lang-btn">RU</span>
+                <span onclick="changeLang('ua', event)" class="lang-btn">UA</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section class="about-intro reveal">
+    <div class="container flex-row about-grid-container">
+        <div class="about-visuals">
+            <div class="img-wrapper">
+                <img src="img/about.png" alt="Decoration Experts" class="main-about-img">
+            </div>
+        </div>
+
+        <div class="about-text-content">
+            <p id="about-tag" class="green-subtitle">O nas</p>
+            <h1 id="about-main-title">Eksperci w dziedzinie dekoracji</h1>
+            <p id="about-main-desc">
+                Farby Jafep to lider w produkcji farb dekoracyjnych i przemysłowych. Obecni na rynku od 1965 roku, posiadamy ponad 600 dystrybutorów w Hiszpanii i rozbudowaną sieć franczyzową. 
+                Najważniejszą wartością Pinturas Jafep jest niewątpliwie klient — nasi klienci są powodem naszego istnienia. Wszystkie wysiłki firmy ukierunkowane są na osiągnięcie maksymalnej satysfakcji klienta.
+            </p>
+
+            <div class="about-icons-row">
+                <div class="why-card-item">
+                    <img src="img/quality.png" alt="ISO">
+                    <p id="card-iso-text">System Jakości i Zaangażowania Środowiskowego (ISO 9001 i ISO 14001)</p>
+                </div>
+                <div class="why-card-item">
+                    <img src="img/rnd.png" alt="R&D">
+                    <p id="card-rd-text">Badania i Rozwój I+D</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="stats-section reveal">
+    <div class="container stats-grid-container">
+        <div class="stats-header">
+            <span class="jafep-tag">Jafep</span>
+            <h2 id="stats-main-title">Nasze liczby nas potwierdzają</h2>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                <div class="stat-info">
+                    <div class="number-wrapper"><span class="counter" data-target="50">0</span><span>+</span></div>
+                    <p id="stat-years-text">lat w sektorze</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-industry"></i></div>
+                <div class="stat-info">
+                    <div class="number-wrapper"><span class="counter" data-target="40000">0</span><span>+</span></div>
+                    <p id="stat-m2-text">metrów kwadratowych instalacji</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-fill-drip"></i></div>
+                <div class="stat-info">
+                    <div class="number-wrapper"><span class="counter" data-target="30000">0</span><span>+</span></div>
+                    <p id="stat-tons-text">ton farby rocznie</p>
+                </div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon"><i class="fas fa-store"></i></div>
+                <div class="stat-info">
+                    <div class="number-wrapper"><span class="counter" data-target="600">0</span><span>+</span></div>
+                    <p id="stat-dist-text">dystrybutorów w Hiszpanii</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="quality-environment reveal">
+    <div class="container quality-grid">
+        <div class="quality-text">
+            <h2 id="quality-title">Jakość i środowisko</h2>
+            <div class="quality-description">
+                <p id="quality-p1">
+                    W <strong>Farbach Jafep</strong>, naszym priorytetem jest oferowanie produktów wysokiej jakości, bezpiecznych dla środowiska i wytwarzanych pod ścisłą kontrolą jakości. Przestrzegamy krajowych i międzynarodowych przepisów, aby zapewnić, że nasze procesy są odpowiedzialne i przyjazne dla środowiska.
+                </p>
+                <p id="quality-p2">
+                    Od <strong>1999</strong>, posiadamy certyfikaty<strong>ISO 9001:2015</strong> i <strong>ISO 14001:2015</strong> przyznane przez <strong>AENOR i IQNet</strong>. Ponadto nasz system zarządzania środowiskowego jest zintegrowany z naszym systemem zapobiegania ryzyku zawodowemu, zapewniając bezpieczne i kontrolowane środowisko pracy.
+                </p>
+                <p id="quality-p3">
+                    Jesteśmy również członkiem <strong>ECOEMBES</strong>, co pozwala nam przyczyniać się do właściwego zarządzania opakowaniami i odpadami. Wysiłki te przyniosły nam ważne wyróżnienia, takie jak nagroda  <strong>San Juan w 2007 r.</strong>i International Business Master w <strong>1998</strong>.
+                </p>
+            </div>
+        </div>
+
+        <div class="quality-images">
+            <div class="img-frame">
+                <img src="img/placas1.png" alt="Jafep Factory Aerial View">
+            </div>
+            <div class="img-frame">
+                <img src="img/placas2.png" alt="Jafep Plant Solar Panels">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="rnd-section reveal">
+    <div class="container">
+        <div class="rnd-top-header">
+            <div class="rnd-title-group">
+            <i class="fas fa-microscope rnd-main-icon"></i>
+            <h1 id="rnd-title-text">Badania i Rozwój</h1> 
+            </div>
+            <div class="rnd-decoration-line"></div>
+        </div>
+
+        <div class="rnd-grid">
+            <div class="rnd-col">
+                <p id="rnd-text-1">
+                    W Pinturas Jafep pracujemy w duchu ciągłego doskonalenia i nieustannego poszukiwania innowacji, aby w każdej chwili dostosować się do potrzeb rynku i zaspokajać potrzeby naszych klientów. Od momentu powstania Pinturas Jafep, stałe inwestycje w R&D pozwoliły nam być liderami w produkcji farb, dostarczając rozwiązania spełniające wymagania naszych klientów, a jednocześnie chroniąc środowisko. Posiadamy rozbudowane obiekty wyposażone w najnowocześniejszą technologię.
+                </p>
+            </div>
+            <div class="rnd-col">
+                <p id="rnd-text-2">
+                    Posiadamy Dział R&D tworzony przez zespół wysoko wykwalifikowanych specjalistów oraz kompletne laboratorium analiz z nowoczesnym sprzętem badawczym, gdzie zgodnie z naszą linią modernizacji i ciągłego doskonalenia, stale badamy i opracowujemy produkty (zarówno nowe, jak i ulepszamy istniejące) oraz przeprowadzamy wszelkie niezbędne kontrole jakości. Współpracujemy z różnymi uniwersytetami, agencjami rozwoju, centrami badawczymi i instytutami technologicznymi.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+     const translations = {
+        pl: {
+            menuAbout: "O nas", menuProducts: "Produkty", menuContact: "Kontakt", searchPlace: "Szukaj...", "menu-products": "Produkty", 
+            "menu-where": "Gdzie kupić",
+            "menu-franchise": "Franczyza",
+            "menu-blog": "Blog",
+            btnMoreAbout: "WIĘCEJ O JAFEP",
+            heroTitle: "Hiszpańskie Tradycje.<br>Europejskie standardy.",
+            heroSub: "Farby, laki i gruntówki do zastosowań przemysłowych i cywilnych.",
+            contactBtn: "Zapytaj o ofertę", productsTitle: "Nasze Rozwiązania", productsSub: "Hiszpańska jakość dla każdego projektu",
+            whyTitle: "Dlaczego Jafep?",
+            whyItem1: "<strong>Europejska jakość</strong> – standardy potwierdzone certyfikatami.",
+            whyItem2: "<strong>Konkurencyjne ceny</strong> – prosto od hiszpańskiego producenta.",
+            whyItem3: "<strong>Współpraca hurtowa</strong> – specjalna oferta dla firm budowlanych.",
+            whyItem4: "<strong>Szybkie dostawy</strong> – logistyka na najwyższym poziomie.",
+            whyItem5: "<strong>Nowoczesność</strong> – oparte na nanotechnologii i ekomateriałach.",
+            contactTitle: "Kontakt", formTitle: "Napisz do nas",
+            namePlace: "Twoje imię", emailPlace: "Twój E-mail", msgPlace: "Twoja wiadomość",
+            phonePlace: "Numer Telefonu",
+            sendBtn: "Wyślij wiadomość", sendingBtn: "Wysyłanie...",
+            modalTitle: "Dziękujemy!", modalText: "Twoja wiadomość została wysłana.<br>Skontaktujemy się z Tobą wkrótce.",
+            feat1Title: "Szybka dostawa", feat1Text: "Realizacja zamówień w krótkim czasie.",
+            feat2Title: "Ekologia", feat2Text: "Produkty bezpieczne dla środowiska.",
+            feat3Title: "Innowacje R+D", feat3Text: "Ciągłe badania nad recepturami.",
+            feat4Title: "Gwarancja", feat4Text: "Hiszpańskie standardy produkcji.",
+            choiceDistTitle: "Chcę zostać dystrybutorem",
+            choiceDistText: "Dołącz do naszej sieci sprzedaży i rozwijaj swój biznes z Jafep.",
+            choiceDistMore: "Więcej informacji",
+             choiceConsTitle: "Chcę zostać konsumentem",
+            choiceConsText: "Wybierz najlepsze farby dla swojego domu lub projektu.",
+            choiceConsMore: "Więcej informacji",
+            franPromoTitle: "Twój własny biznes z Jafep",
+            franPromoText: "Otwórz punkt sprzedaży pod marką lidera rynku. Zapewniamy wsparcie, szkolenia i sprawdzony model biznesowy.",
+            franPromoBtn: "Dowiedz się więcej o franczyzie",
+            "news-title": "Aktualności",
+            "news-1-head": "Do zobaczenia wkrótce!)",
+            news1Text: "Przygotowujemy dla Was coś wyjątkowego. Bądźcie czujni!",
+            reviewsTitle: "Opinie",
+            revMore: "Dowiedz się więcej",
+            footerDesc: "Hiszpańska tradycja i nowoczesna technologia w produkcji farb i lakierów.",
+            footerNav: "Menu",
+            footerLegal: "Info",
+            footerContact: "Kontakt",
+            footerRights: "Wszystkie prawa zastrzeżone.",
+            privacyPolicy: "Privacy Policy",
+            cookiePolicy: "Cookie Policy",
+            legalNotice: "Legal Notice",
+            choiceSubtitle: "Punkty sprzedaży",
+            choiceMainTitle: "Wysokiej jakości farby",
+            choiceMoreBtn: "Więcej informacji",
+            contactSubtitle: "Kontakt z nami",
+            contactDistQuestion: "Zainteresowany zostaniem dystrybutorem Jafep?",
+            contactDistDesc: "Jeśli jesteś zainteresowany dystrybucją naszych produktów lub masz inne pytania lub sugestie, wypełnij formularz, a my skontaktujemy się z Tobą najszybciej jak to możliwe.",
+            tgHelp: "Potrzebujesz pomocy? <strong>Napisz do nas</strong>",
+            "menu-catalogues": "Katalogi",
+            "privacyPolicy": "Polityka prywatności",
+        "cookiePolicy": "Polityka cookies",
+        "legalNotice": "Nota prawna",
+        "prod-1-title": "Farby Elewacyjne",
+        "prod-1-text": "Maksymalna ochrona budynków przed warunkami atmosferycznymi. Legendarny Pétrex 5.",
+        "prod-2-title": "Farby do Wnętrz",
+        "prod-2-text": "Ekologiczne i trwałe farby do salonów, kuchni i obiektów użyteczności publicznej.",
+        "prod-3-title": "Linia Przemysłowa",
+        "prod-3-text": "Specjalistyczne powłoki antykorozyjne i lakiery dla profesjonalistów.",
+        "prodSoon": "Wkrótce в ofercie →",
+        "news-1-text": "Odkryj innowacyjne rozwiązania dla Twojego domu...",
+        "news-2-head": "Jafep na targach w Warszawie",
+        "news-2-text": "Relacja z najważniejszego wydarzenia branżowego roku...",
+        "user-name-1": "Marek Wiśniewski",
+        "rev-1-text": '"Najlepsza jakość krycia, jaką spotkałem. Farba Jafep to strzał w dziesiątkę!"',
+         "card-iso-text": "System Jakości i Zaangażowania Środowiskowego (ISO 9001 i ISO 14001)",
+            "card-rd-text": "Badania i Rozwój R&D",
+            "cat-subtitle": "Farby Jafep",
+"cat-title": "Katalogi PDF",
+"cat-desc": "Sprawdź lub pobierz nasze katalogi w formacie PDF.",
+"cat-btn": "Zobacz katalogi",
+"about-tag": "O nas",
+"about-main-title": "Eksperci w dziedzinie dekoracji",
+"about-main-desc": "Farby Jafep to wiodący producent farb do dekoracji i przemysłu. Działamy od 1965 roku, z ponad 600 dystrybutorami w Hiszpanii i rozległą siecią franczyzową. Największym atutem Pinturas Jafep jest nasz klient. Wszystkie nasze wysiłki koncentrują się na osiągnięciu maksymalnej satysfakcji klienta.",
+"stats-main-title": "Nasze liczby nas potwierdzają",
+"stat-years-text": "lat w sektorze",
+"stat-m2-text": "metrów kwadratowych instalacji",
+"stat-tons-text": "ton farby rocznie",
+"stat-dist-text": "dystrybutorów w Hiszpanii",
+"quality-title": "Jakość i środowisko",
+"quality-p1": "W Pinturas Jafep naszym priorytetem jest oferowanie produktów wysokiej jakości, bezpiecznych dla środowiska i wytwarzanych pod ścisłą kontrolą jakości. Przestrzegamy krajowych i międzynarodowych przepisów, aby zapewnić, że nasze procesy są odpowiedzialne i przyjazne dla środowiska.",
+"quality-p2": "Od 1999 roku posiadamy certyfikaty ISO 9001:2015 i ISO 14001:2015, przyznane przez AENOR i IQNet. Ponadto nasz system zarządzania środowiskowego jest zintegrowany z naszym systemem zapobiegania ryzyku zawodowemu, zapewniając bezpieczne i kontrolowane środowisko pracy.",
+"quality-p3": "Jesteśmy również członkiem ECOEMBES, co pozwala nam przyczyniać się do właściwego zarządzania opakowaniami i odpadami. Wysiłki te przyniosły nam ważne wyróżnienia, takie jak nagroda San Juan w 2007 r. i International Business Master w 1998 r.",
+"rnd-title-text": "Badania i rozwój——",
+"rnd-text-1": "W Farbach Jafep pracujemy w duchu ciągłego doskonalenia i nieustannego poszukiwania innowacji, aby w każdej chwili dostosować się do potrzeb rynku i zaspokajać potrzeby naszych klientów. Od momentu powstania Pinturas Jafep, stałe inwestycje w R&D pozwoliły nam być liderami w produkcji farb, dostarczając rozwiązania spełniające wymagania naszych klientów, a jednocześnie chroniąc środowisko. Posiadamy rozbudowane obiekty wyposażone w najnowocześniejszą technologię.",
+"rnd-text-2": "Posiadamy Dział R&D tworzony przez zespół wysoko wykwalifikowanych specjalistów oraz kompletne laboratorium analiz z nowoczesnym sprzętem badawczym, gdzie zgodnie z naszą linią modernizacji i ciągłego doskonalenia, stale badamy i opracowujemy produkty (zarówno nowe, jak i ulepszamy istniejące) oraz przeprowadzamy wszelkie niezbędne kontrole jakości. Współpracujemy z różnymi uniwersytetami, agencjami rozwoju, centрами badawczymi i instytutami technologicznymi.",
+"menu-where": "Gdzie kupić?",
+"menu-where-cons": "Jestem konsumentem",
+"menu-where-dist": "Jestem dystrybutorem",
+              
+
+        
+    // ...
+        },
+        en: {
+            menuAbout: "About us", menuProducts: "Products", menuContact: "Contact", searchPlace: "Search...",
+            "menu-where": "Where to buy",
+            "menu-franchise": "Franchise",
+            "menu-blog": "Blog",
+            btnMoreAbout: "MORE ABOUT JAFEP",
+            "products-title": "Our Solutions",
+            "products-sub": "Spanish quality for every project",
+            "card-iso-text": "Quality and Environmental Commitment System (ISO 9001 and ISO 14001)",
+            "card-rd-text": "Research and Development R&D",
+            heroTitle: "Spanish Traditions.<br>European standards.",
+            heroSub: "Paints, varnishes and primers for industrial and civil applications.",
+            contactBtn: "Get an offer", productsTitle: "Our Solutions", productsSub: "Spanish quality for every project",
+            whyTitle: "Why Jafep?",
+            whyItem1: "<strong>European quality</strong> – standards confirmed by certificates.",
+            whyItem2: "<strong>Competitive prices</strong> – straight from the Spanish manufacturer.",
+            whyItem3: "<strong>Wholesale cooperation</strong> – special offer for construction companies.",
+            whyItem4: "<strong>Fast deliveries</strong> – logistics at the highest level.",
+            whyItem5: "<strong>Modernity</strong> – based on nanotechnology and eco-materials.",
+            contactTitle: "Contact", formTitle: "Write to us",
+            namePlace: "Your name", emailPlace: "Your email", msgPlace: "Your message",
+            phonePlace: "Phone Number",
+            sendBtn: "Send message", sendingBtn: "Sending...",
+            modalTitle: "Thank You!", modalText: "Your message has been sent.<br>We will contact you shortly.",
+            feat1Title: "Fast delivery", feat1Text: "Fulfilling orders in the shortest possible time",
+            feat2Title: "Eco-friendly products", feat2Text: "Health-safe paints",
+            feat3Title: "R&D innovation", feat3Text: "Ongoing formulation research",
+            feat4Title: "Quality guarantee", feat4Text: "Spanish production standards",
+            choiceDistTitle: "I want to become a distributor,",
+            choiceDistTitle: "I want to become a distributor,",
+            choiceDistText: "Join our distribution network and grow your business with Jafep,",
+            choiceDistMore: "More information,",
+            choiceConsTitle: "I want to become a consumer,",
+            choiceConsText: "Choose the best paints for your home or project,",
+            choiceConsMore: "More information",
+            franPromoTitle: "Your Own Business with Jafep",
+            franPromoText: "Open a sales point under the market leader's brand. We provide support, training, and a proven business model.",
+            franPromoBtn: "Learn more about franchise",
+            "news-title": "News",
+            "news-1-head": "See you soon!)",
+            news1Text: "We're preparing something special for you. Stay tuned!",
+            reviewsTitle: "Reviews",
+            revMore: "Learn more",
+            footerDesc: "Spanish traditions and modern technologies in the production of paints and varnishes,",
+            footerNav: "Menu",
+            footerLegal: "Info",
+            footerContact: "Contact",
+            footerRights: "All rights reserved,",
+            privacyPolicy: "Privacy Policy,",
+            cookiePolicy: "Cookie Policy,",
+            legalNotice: "Legal Information",
+            choiceSubtitle: "Points of Sale",
+            choiceMainTitle: "High-Quality Paints",
+            choiceMoreBtn: "Discover more",
+            contactSubtitle: "Contact Us",
+            contactDistQuestion: "Want to become a Jafep distributor?",
+            contactDistDesc: "If you are interested in becoming a distributor of our products, or if you have any other questions or suggestions, please fill out the form and we will get back to you as soon as possible.",
+            tgHelp: "Need Help? <strong>Chat with us</strong>" ,
+            "menu-catalogues": "Catalogue",
+            privacyPolicy: "Privacy Policy", 
+            choiceSubtitle: "Points of Sale", 
+            legalNotice: "Legal information",
+            "prod-1-title": "Facade Paints",
+        "prod-1-text": "Maximum protection of buildings against weather conditions. Legendary Pétrex 5.",
+        "prod-2-title": "Interior Paints",
+        "prod-2-text": "Eco-friendly and durable paints for living rooms, kitchens and public buildings.",
+        "prod-3-title": "Industrial Line",
+        "prod-3-text": "Specialized anti-corrosion coatings and varnishes for professionals.",
+        "prodSoon": "Coming soon →",
+        "news-1-text": "Discover innovative solutions for your home...",
+        "news-2-head": "Jafep at the trade fair in Warsaw",
+        "news-2-text": "Report from the most important industry event of the year...",
+        "user-name-1": "Mark Wisniewski",
+        "rev-1-text": '"The best coverage quality I have encountered. Jafep paint is a bullseye!"',
+        "cat-subtitle": "Jafep Paints",
+"cat-title": "PDF Catalogs",
+"cat-desc": "Check or download our catalogs in PDF format.",
+"cat-btn": "View catalogs",
+"about-tag": "About us",
+"about-main-title": "Experts in Decorating",
+"about-main-desc": "Jafep Paints is a leading manufacturer of paints for decor and industry. We've been in business since 1965, with over 600 distributors in Spain and an extensive franchise network. Pinturas Jafep's greatest asset is our customer. All our efforts are focused on achieving maximum customer satisfaction.",
+"stats-main-title": "Our numbers confirm us",
+"stat-years-text": "years in the sector",
+"stat-m2-text": "square meters of installation",
+"stat-tons-text": "tons of paint per year",
+"stat-dist-text": "distributors in Spain",
+"quality-title": "Quality and Environment",
+"quality-p1": "At Pinturas Jafep, our priority is to offer high-quality, environmentally safe products manufactured under strict quality control. We comply with national and international regulations to ensure that our processes are responsible and environmentally friendly.",
+"quality-p2": "Since 1999, we have been ISO 9001:2015 and ISO 14001:2015 certified by AENOR and IQNet. Furthermore, our environmental management system is integrated with our occupational risk prevention system, ensuring a safe and controlled work environment.",
+"quality-p3": "We are also a member of ECOEMBES, which allows us to contribute to the proper management of packaging and waste. These efforts have earned us important distinctions, such as the San Juan Award in 2007 and the International Business Master in 1998.",
+"rnd-title-text": "Research and Development——",
+"rnd-text-1": "At Pinturas Jafep, we work in a spirit of continuous improvement and a constant search for innovation to constantly adapt to market needs and meet the needs of our customers. Since Pinturas Jafep's founding, constant investment in R&D has allowed us to be leaders in paint production, providing solutions that meet our customers' requirements while protecting the environment. We have extensive facilities equipped with state-of-the-art technology.",
+"rnd-text-2": "We have an R&D department composed of a team of highly qualified specialists and a complete analysis laboratory with modern research equipment. In line with our modernization and continuous improvement strategy, we constantly research and develop products (both new and improved) and conduct all necessary quality controls. We collaborate with various universities, development agencies, research centers, and technological institutes.",
+"menu-where": "Where to buy?",
+"menu-where-cons": "I am a consumer",
+"menu-where-dist": "I am a distributor",
+
+        },
+        ru: {
+            menuAbout: "О нас", menuProducts: "Продукты", menuContact: "Контакты", searchPlace: "Поиск...",
+            "menu-where": "Где купить",
+            "menu-franchise": "Франшиза",
+            "menu-blog": "Блог",
+            btnMoreAbout: "ПОДРОБНЕЕ О JAFEP",
+            "products-title": "Наши решения",
+            "products-sub": "Испанское качество для любого проекта",
+            "card-iso-text": "Система качества и экологических обязательств (ISO 9001 и ISO 14001)",
+            "card-rd-text": "Исследования и разработки (НИОКР)",
+            heroTitle: "Испанские традиции.<br>Европейские стандарты.",
+            heroSub: "Краски, лаки и грунтовки для промышленного и гражданского применения.",
+            contactBtn: "Запросить предложение", productsTitle: "Наши решения", productsSub: "Испанское качество для любого проекта",
+            whyTitle: "Почему Jafep?",
+            whyItem1: "<strong>Европейское качество</strong> – стандарты, подтвержденные сертификатами.",
+            whyItem2: "<strong>Конкурентные цены</strong> – напрямую от испанского производителя.",
+            whyItem3: "<strong>Оптовое сотрудничество</strong> – спецпредложение для стройфирм.",
+            whyItem4: "<strong>Быстрая доставка</strong> – логистика на высшем уровне.",
+            whyItem5: "<strong>Современность</strong> – нанотехнологии и эко-материалы.",
+            contactTitle: "Контакт", formTitle: "Напишите нам",
+            namePlace: "Ваше имя", emailPlace: "Ваш E-mail", msgPlace: "Ваше сообщение",
+            phonePlace: "Номер телефона",
+            sendBtn: "Отправить сообщение", sendingBtn: "Отправка...",
+            modalTitle: "Спасибо!", modalText: "Ваше сообщение было отправлено.<br>Мы свяжемся с вами в ближайшее время.",
+            feat1Title: "Быстрая доставка", feat1Text: "Выполнение заказов в кратчайшие сроки.",
+            feat2Title: "Эко-продукты", feat2Text: "Краски, безопасные для здоровья.",
+            feat3Title: "Инновации R+D", feat3Text: "Постоянные исследования рецептур.",
+            feat4Title: "Гарантия качества", feat4Text: "Испанские стандарты производства.",
+            choiceDistTitle: "Хочу стать дистрибьютором",
+            choiceDistText: "Присоединяйтесь к нашей торговой сети и развивайте бизнес с Jafep.",
+            choiceDistMore: "Больше информации",
+            choiceConsTitle: "Хочу стать потребителем",
+            choiceConsText: "Выбирайте лучшие краски для своего дома или проекта.",
+            choiceConsMore: "Больше информации",
+            franPromoTitle: "Ваш собственный бизнес с Jafep",
+            franPromoText: "Откройте точку продаж под брендом лидера рынка. Мы обеспечим поддержку, обучение и готовую модель бизнеса.",
+            franPromoBtn: "Узнать больше о франшизе",
+            "news-title": "Новости",
+            "news-1-head": "Скоро увидимся!)",
+            news1Text: "Мы готовим для вас кое-что особенное. Следите за обновлениями!",
+            reviewsTitle: "Отзывы",
+            revMore: "Узнать больше",
+            footerDesc: "Испанские традиции и современные технологии в производстве красок и лаков.",
+            footerNav: "Меню",
+            footerLegal: "Инфо",
+            footerContact: "Контакт",
+            footerRights: "Все права защищены.",
+            privacyPolicy: "Политика конфиденциальности",
+            cookiePolicy: "Политика Cookie",
+            legalNotice: "Правовая информация",
+            choiceSubtitle: "Точки продаж",
+            choiceMainTitle: "Высококачественные краски",
+            choiceMoreBtn: "Узнать больше",
+            contactSubtitle: "Связаться с нами",
+            contactDistQuestion: "Хотите стать дистрибьютором Jafep?",
+            contactDistDesc: "Если вас интересует возможность стать дистрибьютором нашей продукции, или если у вас есть другие вопросы или предложения, пожалуйста, заполните форму, и мы свяжемся с вами в кратчайшие сроки.",
+            tgHelp: "Нужна помощь? <strong>Напишите нам</strong>",
+            "menu-catalogues": "Каталоги",
+            privacyPolicy: "Политика конфиденциальности", 
+            cookiePolicy: "Политика Cookie", 
+            legalNotice: "Правовая информация",
+            "prod-1-title": "Фасадные краски",
+        "prod-1-text": "Максимальная защита зданий от погодных условий. Легендарный Pétrex 5.",
+        "prod-2-title": "Интерьерные краски",
+        "prod-2-text": "Экологичные и долговечные краски для гостиных, кухонь и общественных зданий.",
+        "prod-3-title": "Промышленная линия",
+        "prod-3-text": "Специализированные антикоррозийные покрытия и лаки для профессионалов.",
+        "prodSoon": "Скоро в продаже →",
+        "news-1-text": "Откройте для себя инновационные решения для вашего дома...",
+        "news-2-head": "Jafep на выставке в Варшаве",
+        "news-2-text": "Отчет о самом важном отраслевом событии года...",
+        "user-name-1": "Марек Вишневский",
+        "rev-1-text": '«Лучшее качество покрытия, которое я встречал. Краска Jafep — это попадание в десятку!»',
+ "cat-subtitle": "Краски Jafep",
+"cat-title": "PDF Каталоги",
+"cat-desc": "Посмотрите или скачайте наши каталоги в формате PDF.",
+"cat-btn": "Смотреть каталоги",
+"about-tag": "О нас",
+"about-main-title": "Эксперты в декорировании",
+"about-main-desc": "Краски Jafep — ведущая компания по производству красок для декора и промышленности. Мы на рынке с 1965 года, имеем более 600 дистрибьюторов в Испании и развитую сеть франшиз. Главная ценность Pinturas Jafep — это наш клиент. Все усилия компании направлены на достижение максимального удовлетворения потребностей заказчика.",
+"stats-main-title": "Цифры, которые нас подтверждают",
+"stat-years-text": "лет в секторе",
+"stat-m2-text": "квадратных метров мощностей",
+"stat-tons-text": "тонн краски в год",
+"stat-dist-text": "дистрибьюторов в Испании",
+"quality-title": "Качество и окружающая среда",
+"quality-p1": "В Pinturas Jafep нашим приоритетом является предложение высококачественной продукции, безопасной для окружающей среды и производимой под строгим контролем. Мы соблюдаем национальные и международные нормы, чтобы гарантировать ответственность и экологичность наших процессов.",
+"quality-p2": "С 1999 года мы владеем сертификатами ISO 9001:2015 и ISO 14001:2015, выданными AENOR и IQNet. Кроме того, наша система экологического менеджмента интегрирована с системой предотвращения рисков на производстве, что гарантирует безопасную рабочую среду.",
+"quality-p3": "Мы также являемся членами ECOEMBES, что позволяет нам вносить вклад в правильную переработку упаковки и отходов. Эти усилия принесли нам важные награды, такие как San Juan Award в 2007 году и International Business Master в 1998 году.",
+"rnd-title-text": "Исследования и разработки——",
+"rnd-text-1": "В компании Farby Jafep мы работаем в духе постоянного совершенствования и непрерывного поиска инноваций, чтобы постоянно адаптироваться к потребностям рынка и удовлетворять потребности наших клиентов. С момента основания Pinturas Jafep постоянные инвестиции в НИОКР позволили нам стать лидерами в производстве красок, предлагая решения, отвечающие требованиям наших клиентов и одновременно защищающие окружающую среду. Мы располагаем обширными производственными мощностями, оснащенными самыми современными технологиями».",
+"rnd-text-2": "У нас есть отдел НИОКР, состоящий из команды высококвалифицированных специалистов, и полноценная аналитическая лаборатория с современным исследовательским оборудованием. В соответствии с нашей стратегией модернизации и постоянного совершенствования мы постоянно исследуем и разрабатываем продукты (как новые, так и улучшенные) и проводим все необходимые проверки качества. Мы сотрудничаем с различными университетами, агентствами развития, исследовательскими центрами и технологическими институтами».",
+"menu-where": "Где купить?",
+"menu-where-cons": "Я потребитель",
+"menu-where-dist": "Я дистрибьютор",
+
+        },
+        ua: {
+            menuAbout: "Про нас", menuProducts: "Продукти", menuContact: "Контакти", searchPlace: "Пошук...",
+            "menu-where": "Де купити",
+            "menu-franchise": "Франшиза",
+            "menu-blog": "Блог",
+            btnMoreAbout: "ДЕТАЛЬНІШЕ ПРО JAFEP",
+            "products-title": "Наші рішення",
+            "products-sub": "Іспанська якість для будь-якого проекту",
+            "card-iso-text": "Система якості та екологічних зобов'язань (ISO 9001 та ISO 14001)",
+            "card-rd-text": "Дослідження та розробки (НДДКР)",
+            heroTitle: "Іспанські традиції.<br>Європейські стандарти.",
+            heroSub: "Фарби, лаки та ґрунтовки для промислового та цивільного застосування.",
+            contactBtn: "Запитати пропозицію", productsTitle: "Наші рішення", productsSub: "Іспанська якість для будь-якого проекту",
+            whyTitle: "Чому Jafep?",
+            whyItem1: "<strong>Європейська якість</strong> – стандарти, підтверджені сертифікатами.",
+            whyItem2: "<strong>Конкурентні ціни</strong> – напряму від іспанського виробника.",
+            whyItem3: "<strong>Оптова співпраця</strong> – спецпропозиція для будфірм.",
+            whyItem4: "<strong>Швидка доставка</strong> – логістика на найвищому рівні.",
+            whyItem5: "<strong>Сучасність</strong> – нанотехнології та еко-матеріали.",
+            contactTitle: "Контакт", formTitle: "Напишіть нам",
+            namePlace: "Ваше ім'я", emailPlace: "Ваша електронна адреса", msgPlace: "Ваше повідомлення",
+            phonePlace: "Номер телефону",
+            sendBtn: "Надіслати повідомлення", sendingBtn: "Відправка...",
+            modalTitle: "Дякуємо!", modalText: "Ваше повідомлення було надіслано.<br>Ми зв'яжемося з вами найближчим часом.",
+            feat1Title: "Швидка доставка", feat1Text: "Виконання замовлень у найкоротші терміни.",
+            feat2Title: "Еко-продукти", feat2Text: "Фарби, безпечні для здоров'я.",
+            feat3Title: "Інновації R+D", feat3Text: "Постійні дослідження рецептур.",
+            feat4Title: "Гарантія якості", feat4Text: "Іспанські стандарти виробництва.",
+            choiceDistTitle: "Хочу стати дистриб'ютором",
+            choiceDistText: "Приєднуйтесь до нашої торгової мережі та розвивайте бізнес з Jafep.",
+            choiceDistMore: "Більше інформації",
+            choiceConsTitle: "Хочу стати споживачем",
+            choiceConsText: "Вибирайте найкращі фарби для свого будинку чи проекту.",
+            choiceConsMore: "Більше інформації",
+            franPromoTitle: "Ваш власний бізнес із Jafep",
+            franPromoText: "Відкрийте точку продажу під брендом лідера ринку. Ми забезпечимо підтримку, навчання та готову модель бізнесу.",
+            franPromoBtn: "Дізнатися більше про франшизу",
+            "news-title": "Новини",
+            "news-1-head": "Скоро побачимось!",
+             news1Text: "Ми готуємо для вас дещо особливе. Слідкуйте за оновленнями!",
+            reviewsTitle: "Відгуки",
+            revMore: "Дізнатися більше",
+            footerDesc: "Іспанські традиції та сучасні технології у виробництві фарб та лаків.",
+            footerNav: "Меню",
+            footerLegal: "Інфо",
+            footerContact: "Контакт",
+            footerRights: "Всі права захищені.",
+            privacyPolicy: "Політика конфіденційності",
+            cookiePolicy: "Політика cookie",
+            legalNotice: "Правова інформація",
+            choiceSubtitle: "Точки продажу",
+            choiceMainTitle: "Високоякісні фарби",
+            choiceMoreBtn: "Дізнатися більше",
+            contactSubtitle: "Зв'язатися з нами",
+            contactDistQuestion: "Хочете стати дистриб'ютором Jafep?",
+            contactDistDesc: "Якщо ви зацікавлені стати дистриб'ютором нашої продукції, або якщо у вас є інші запитання чи пропозиції, будь ласка, заповніть форму, і ми зв'яжемося з вами якомога швидше.",
+            tgHelp: "Потрібна допомога? <strong>Напишіть нам</strong>",
+            "menu-catalogues": "Каталоги",
+            privacyPolicy: "Політика конфіденційності", 
+            cookiePolicy: "Політика Cookie", 
+            legalNotice: "Правова інформація",
+            "prod-1-title": "Фасадні фарби",
+        "prod-1-text": "Максимальний захист будівель від погодних умов. Легендарний Pétrex 5.",
+        "prod-2-title": "Інтер'єрні фарби",
+        "prod-2-text": "Екологічні та довговічні фарби для віталень, кухонь та громадських приміщень.",
+        "prod-3-title": "Промислова лінія",
+        "prod-3-text": "Спеціалізовані антикорозійні покриття та лаки для професіоналів.",
+        "prodSoon": "Скоро у продажу →",
+        "news-1-text": "Відкрийте для себе інноваційні рішення для вашого дому...",
+        "news-2-head": "Jafep на виставці у Варшаві",
+        "news-2-text": "Звіт про найважливішу галузеву подію року...",
+        "user-name-1": "Марек Вишневський",
+        "rev-1-text": '«Найкраща якість покриття, яку я зустрічав. Фарба Jafep — це влучання в десятку!»',
+        "cat-subtitle": "Фарби Jafep",
+        "cat-title": "PDF Каталоги",
+        "cat-desc": "Перегляньте або завантажте наші каталоги у форматі PDF.",
+        "cat-btn": "Переглянути каталоги",
+        "about-tag": "Про нас",
+        "about-main-title": "Експерти у декоруванні",
+        "about-main-desc": "Фарби Jafep - провідна компанія з виробництва фарб для декору та промисловості. Ми на ринку з 1965 року, маємо більше 600 дистриб'юторів в Іспанії та розвинену мережу франшиз. Головна цінність Pinturas Jafep - це наш клієнт. Всі зусилля компанії спрямовані на достання.",
+        "stats-main-title": "Наші цифри нас підтверджують",
+"stat-years-text": "роки в секторі",
+"stat-m2-text": "квадратні метри встановлення",
+"stat-tons-text": "тонни фарби на рік",
+"stat-dist-text": "дистриб'ютори в Іспанії",
+"quality-title": "Якість та довкілля",
+"quality-p1": "У Pinturas Jafep нашим пріоритетом є пропонування високоякісної, екологічно безпечної продукції, виготовленої під суворим контролем якості. Ми дотримуємося національних та міжнародних норм, щоб забезпечити відповідальність та екологічність наших процесів.",
+"quality-p2": "З 1999 року ми сертифіковані за стандартами ISO 9001:2015 та ISO 14001:2015 AENOR та IQNet. Крім того, наша система екологічного менеджменту інтегрована з нашою системою запобігання професійним ризикам, що забезпечує безпечне та контрольоване робоче середовище.",
+"quality-p3": "Ми також є членом ECOEMBES, що дозволяє нам робити свій внесок у належне управління упаковкою та відходами. Ці зусилля принесли нам важливі відзнаки, такі як премія Сан-Хуана у 2007 році та ступінь магістра міжнародного бізнесу у 1998 році.",
+"rnd-title-text": "Дослідження та розробки——",
+"rnd-text-1": "У Фарбах Jafep ми працюємо в дусі постійного вдосконалення та постійного пошуку інновацій, щоб постійно адаптуватися до потреб ринку та задовольняти потреби наших клієнтів. З моменту заснування Pinturas Jafep постійні інвестиції в дослідження та розробки дозволили нам бути лідерами у виробництві фарб, пропонуючи рішення, які відповідають вимогам наших клієнтів, одночасно захищаючи навколишнє середовище. Ми маємо великі потужності, оснащені найсучаснішими технологіями.",
+"rnd-text-2": "У нас є відділ досліджень та розробок, що складається з команди висококваліфікованих спеціалістів, та повноцінна аналітична лабораторія із сучасним дослідницьким обладнанням. Відповідно до нашої стратегії модернізації та постійного вдосконалення ми постійно досліджуємо та розробляємо продукти (як нові, так і вдосконалені) та проводимо весь необхідний контроль якості. Ми співпрацюємо з різними університетами, агентствами розвитку, дослідницькими центрами та технологічними інститутами.",
+"menu-where": "Де купити?",
+"menu-where-cons": "Я споживач",
+"menu-where-dist": "Я дистриб'ютор",
+        }
+    };
+
+let currentLang = 'pl';
+
+    function changeLang(lang, event) {
+        currentLang = lang;
+        const t = translations[lang];
+        if (!t) return;
+
+          function toggleMobileMenu() {
+    const nav = document.querySelector('.custom-nav');
+    const icon = document.querySelector('.menu-toggle i');
+    
+    if (nav && icon) {
+        nav.classList.toggle('mobile-active');
+        
+        // Проверяем, открыто ли меню
+        if (nav.classList.contains('mobile-active')) {
+            // Если открыто - ставим крестик
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-xmark');
+        } else {
+            // Если закрыто - возвращаем полоски
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    }
+}
+
+        function changeLang(lang, event) {
+    localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
+    currentLang = lang;
+    const t = translations[lang];
+    if (!t) return;
+    
+    // ... весь твой остальной код перевода (меню, заголовки и т.д.) ...
+}
+
+        const fWhereText = document.getElementById('f-menu-where-text');
+if (fWhereText) fWhereText.innerText = t["menu-where"];
+
+const fWhereCons = document.getElementById('f-menu-where-cons');
+if (fWhereCons) fWhereCons.innerText = t["menu-where-cons"];
+
+const fWhereDist = document.getElementById('f-menu-where-dist');
+if (fWhereDist) fWhereDist.innerText = t["menu-where-dist"];
+
+        const menuWhereText = document.getElementById('menu-where-text');
+    if (menuWhereText && t["menu-where"]) {
+        menuWhereText.innerText = t["menu-where"];
+    }
+
+        const consLink = document.getElementById('menu-where-cons');
+    if (consLink && t["menu-where-cons"]) {
+        consLink.innerText = t["menu-where-cons"];
+    }
+
+    const distLink = document.getElementById('menu-where-dist');
+    if (distLink && t["menu-where-dist"]) {
+        distLink.innerText = t["menu-where-dist"];
+    }
+
+        const statsIds = [
+        'stats-main-title', 
+        'stat-years-text', 
+        'stat-m2-text', 
+        'stat-tons-text', 
+        'stat-dist-text'
+    ];
+
+    statsIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && t[id]) {
+            el.innerText = t[id];
+        }
+    });
+        
+
+        // 1. Меню
+        const menuIds = {
+            'menu-about': t.menuAbout,
+            'menu-products': t.menuProducts,
+            'menu-contact': t.menuContact,
+            'menu-catalogues': t["menu-catalogues"],
+            'menu-where': t["menu-where"],
+            'menu-franchise': t["menu-franchise"],
+            'menu-blog': t["menu-blog"]
+        };
+        for (let id in menuIds) {
+            const el = document.getElementById(id);
+            if (el && menuIds[id]) el.innerText = menuIds[id];
+        }
+        if(document.getElementById('menu-home')) document.getElementById('menu-home').innerHTML = '<i class="fas fa-home"></i>';
+
+        // 2. Текстовые блоки
+        if(document.querySelector('.hero h1')) document.querySelector('.hero h1').innerHTML = t.heroTitle;
+        if(document.querySelector('.hero p')) document.querySelector('.hero p').innerText = t.heroSub;
+        if(document.querySelector('.hero .btn')) document.querySelector('.hero .btn').innerText = t.contactBtn;
+        if(document.getElementById('why-title')) document.getElementById('why-title').innerText = t.whyTitle;
+        if(document.getElementById('btnMoreAbout')) document.getElementById('btnMoreAbout').innerText = t.btnMoreAbout;
+
+        const productsTitle = document.getElementById('products-title');
+const productsSub = document.getElementById('products-sub');
+
+
+if (productsTitle && t.productsTitle) {
+    productsTitle.innerText = t.productsTitle;
+}
+if (productsSub && t.productsSub) {
+    productsSub.innerText = t.productsSub;
+}
+
+        const whyItems = document.querySelectorAll('.why-text ul li');
+        const items = [t.whyItem1, t.whyItem2, t.whyItem3, t.whyItem4, t.whyItem5];
+        whyItems.forEach((li, index) => {
+            if (items[index]) li.innerHTML = `<span class="check">✔</span> ${items[index]}`;
+        });
+
+        // 3. Продукты
+        for (let i = 1; i <= 3; i++) {
+            const titleId = `prod-${i}-title`;
+            const textId = `prod-${i}-text`;
+            if (document.getElementById(titleId) && t[titleId]) document.getElementById(titleId).innerText = t[titleId];
+            if (document.getElementById(textId) && t[textId]) document.getElementById(textId).innerText = t[textId];
+        }
+        const soonLabels = document.querySelectorAll('.prod-soon');
+        soonLabels.forEach(label => { if (t.prodSoon) label.innerText = t.prodSoon; });
+
+        // 4. Секции (Features, Choice, Franchise, Social)
+        for (let i = 1; i <= 4; i++) {
+            if(document.getElementById(`feat-${i}-title`)) document.getElementById(`feat-${i}-title`).innerText = t[`feat${i}Title`];
+            if(document.getElementById(`feat-${i}-text`)) document.getElementById(`feat-${i}-text`).innerText = t[`feat${i}Text`];
+        }
+
+        // Перевод секции франшизы (текст и кнопка)
+if (document.getElementById('fran-promo-text')) {
+    document.getElementById('fran-promo-text').innerText = t["franPromoText"];
+}
+const franBtn = document.getElementById('fran-promo-btn');
+if (franBtn && franBtn.querySelector('span')) {
+    franBtn.querySelector('span').innerText = t["franPromoBtn"];
+}
+
+// Перевод заголовка формы и кнопки
+if (document.getElementById('form-title')) {
+    document.getElementById('form-title').innerText = t["formTitle"];
+}
+const sendBtn = document.getElementById('send-btn');
+if (sendBtn && sendBtn.querySelector('span')) {
+    sendBtn.querySelector('span').innerText = t["sendBtn"];
+}
+
+const qualityIds = ['quality-title', 'quality-p1', 'quality-p2', 'quality-p3'];
+qualityIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && t[id]) el.innerHTML = t[id]; // Используй innerHTML, чтобы работали теги <strong>
+});
+
+const rndIds = ['rnd-title-text', 'rnd-text-1', 'rnd-text-2']; // Добавили -text
+rndIds.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && t[id]) {
+        // Используем innerHTML для обработки Markdown-подобных **жирных** выделений, 
+        // если ты заменишь их на <strong> в объекте переводов
+        el.innerHTML = t[id].replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    }
+});
+
+// Перевод подсказок (placeholder) - используем ТВОИ названия ключей
+if (document.getElementById('name-field')) {
+    document.getElementById('name-field').placeholder = t["namePlace"];
+}
+if (document.getElementById('email-field')) {
+    document.getElementById('email-field').placeholder = t["emailPlace"];
+}
+if (document.getElementById('msg-field')) {
+    document.getElementById('msg-field').placeholder = t["msgPlace"];
+}
+
+// Добавляем телефон (его не было в твоем списке, проверь наличие в translations)
+if (document.getElementById('phone-field')) {
+    document.getElementById('phone-field').placeholder = t["phonePlace"] || "Phone";
+
+}
+
+if (document.getElementById('contact-title')) {
+    document.getElementById('contact-title').innerText = t.contactTitle;
+}
+
+if (document.getElementById('phone-field')) {
+    document.getElementById('phone-field').placeholder = t.phonePlace || "Phone";
+}
+
+if (document.getElementById('cat-subtitle')) document.getElementById('cat-subtitle').innerText = t["cat-subtitle"];
+if (document.getElementById('cat-title')) document.getElementById('cat-title').innerText = t["cat-title"];
+if (document.getElementById('cat-desc')) document.getElementById('cat-desc').innerText = t["cat-desc"];
+if (document.getElementById('cat-btn')) document.getElementById('cat-btn').innerText = t["cat-btn"];
+
+
+// Перевод секции каталогов
+if (document.getElementById('cat-subtitle')) document.getElementById('cat-subtitle').innerText = t["cat-subtitle"];
+if (document.getElementById('cat-title')) document.getElementById('cat-title').innerText = t["cat-title"];
+if (document.getElementById('cat-desc')) document.getElementById('cat-desc').innerText = t["cat-desc"];
+if (document.getElementById('cat-btn')) document.getElementById('cat-btn').innerText = t["cat-btn"];
+
+        if(document.getElementById('choice-dist-title')) document.getElementById('choice-dist-title').innerText = t.choiceDistTitle;
+        if(document.getElementById('choice-dist-text')) document.getElementById('choice-dist-text').innerText = t.choiceDistText;
+        if(document.getElementById('choice-cons-title')) document.getElementById('choice-cons-title').innerText = t.choiceConsTitle;
+        if(document.getElementById('choice-cons-text')) document.getElementById('choice-cons-text').innerText = t.choiceConsText;
+        if(document.getElementById('fran-promo-title')) document.getElementById('fran-promo-title').innerText = t.franPromoTitle;
+        if(document.getElementById('news-title')) document.getElementById('news-title').innerText = t.newsTitle;
+        if(document.getElementById('news-1-head')) document.getElementById('news-1-head').innerText = t.news1Head;
+        if(document.getElementById('reviews-title')) document.getElementById('reviews-title').innerText = t.reviewsTitle;
+
+        // 5. Футер
+        if(document.getElementById('footer-desc')) document.getElementById('footer-desc').innerText = t.footerDesc;
+        if(document.getElementById('footer-nav-title')) document.getElementById('footer-nav-title').innerText = t.footerNav;
+        if(document.getElementById('footer-legal-title')) document.getElementById('footer-legal-title').innerText = t.footerLegal;
+        if(document.getElementById('footer-contact-title')) document.getElementById('footer-contact-title').innerText = t.footerContact;
+        if(document.getElementById('footer-rights')) document.getElementById('footer-rights').innerText = t.footerRights;
+        if(document.getElementById('choice-subtitle')) document.getElementById('choice-subtitle').innerText = t.choiceSubtitle;
+        if(document.getElementById('choice-main-title')) document.getElementById('choice-main-title').innerText = t.choiceMainTitle;
+        if(document.getElementById('choice-dist-more-btn')) document.getElementById('choice-dist-more-btn').innerText = t.choiceMoreBtn;
+        if(document.getElementById('choice-cons-more-btn')) document.getElementById('choice-cons-more-btn').innerText = t.choiceMoreBtn;
+        if(document.getElementById('contact-with-us')) document.getElementById('contact-with-us').innerText = t.contactSubtitle;
+        if(document.getElementById('contact-dist-question')) document.getElementById('contact-dist-question').innerText = t.contactDistQuestion;
+        if(document.getElementById('contact-dist-desc')) document.getElementById('contact-dist-desc').innerText = t.contactDistDesc;
+        if(document.getElementById('tg-tooltip-text')) document.getElementById('tg-tooltip-text').innerHTML = t.tgHelp;
+        if (document.getElementById('card-iso-text')) {
+document.getElementById('card-iso-text').innerText = t["card-iso-text"];
+document.getElementById('about-tag').innerText = t["about-tag"];
+document.getElementById('about-main-title').innerText = t["about-main-title"];
+document.getElementById('about-main-desc').innerText = t["about-main-desc"];
+    
+}
+if (document.getElementById('card-rd-text')) {
+    document.getElementById('card-rd-text').innerText = t["card-rd-text"];
+}
+
+        const newsTitle = document.getElementById('news-title');
+const newsHeader = document.getElementById('news-1-head');
+
+// Если элемент есть на странице И в переводах есть для него текст - меняем
+if (newsTitle && t["news-title"]) {
+    newsTitle.innerText = t["news-title"];
+}
+
+if (newsHeader && t["news-1-head"]) {
+    newsHeader.innerText = t["news-1-head"];
+}
+
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) searchInput.setAttribute('placeholder', t.searchPlace);
+
+        const footerLinks = {
+            'f-menu-about': 'menuAbout', 'f-menu-catalogues': 'menu-catalogues', 
+            'f-menu-products': 'menuProducts', 'f-menu-blog': 'menu-blog', 
+            'f-menu-contact': 'menuContact', 'f-legal-privacy': 'privacyPolicy', 
+            'f-legal-cookies': 'cookiePolicy', 'f-legal-notice': 'legalNotice',
+            'f-menu-franchise': 'menu-franchise'
+        };
+        for(let id in footerLinks) {
+            const el = document.getElementById(id);
+            if(el && t[footerLinks[id]]) el.innerText = t[footerLinks[id]];
+        }
+
+        const allBtns = document.querySelectorAll('.lang-btn');
+        allBtns.forEach(b => b.classList.remove('active'));
+        if (event && event.target) {
+            event.target.classList.add('active');
+        } else {
+            allBtns.forEach(b => { if(b.innerText.toLowerCase() === lang.toLowerCase()) b.classList.add('active'); });
+        }
+    }
+
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const btn = document.getElementById('send-btn');
+            btn.disabled = true;
+            btn.innerText = translations[currentLang].sendingBtn;
+            fetch('https://formspree.io/f/xwvwlqzr', {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('thank-you-modal').style.display = 'block';
+                    this.reset();
+                }
+            })
+            .finally(() => {
+                btn.disabled = false;
+                btn.innerText = translations[currentLang].sendBtn;
+            });
+        });
+    }
+
+   function startProductSlider() {
+    const slides = document.querySelectorAll('.gallery-wrapper .slide');
+    let currentSlide = 0;
+
+    if (slides.length === 0) return;
+
+    setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+    }, 5000); // 5 секунд, чтобы успеть рассмотреть детали
+}
+
+document.addEventListener('DOMContentLoaded', startProductSlider);
+
+function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 1);
+            } else {
+                counter.innerText = target.toLocaleString(); // Форматируем число (например, 40 000)
+            }
+        };
+        updateCount();
+    });
+}
+
+// Следим за появлением секции через Intersection Observer
+const statsSection = document.querySelector('.stats-section');
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            initCounters();
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+observer.observe(statsSection);
+
+
+
+    function reveal() {
+        var reveals = document.querySelectorAll('.reveal');
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add('active');
+            } else {
+                reveals[i].classList.remove('active'); 
+            }
+        }
+    }
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    function highlightCurrentPage() {
+    // Получаем имя текущего файла (например, franchise.html)
+    const currentPage = window.location.pathname.split("/").pop();
+    
+    // Если мы на главной (путь пустой или index.html)
+    const pageName = (currentPage === "" || currentPage === "index.html") ? "index.html" : currentPage;
+
+    // Список всех ссылок, которые нужно проверять (меню и футер)
+    const links = document.querySelectorAll('.custom-nav a, footer ul li a');
+
+    links.forEach(link => {
+        // Получаем имя файла из атрибута href
+        const linkPath = link.getAttribute('href');
+
+        // Если href ссылки совпадает с текущей страницей — красим
+        if (linkPath === pageName) {
+            link.classList.add('active-link');
+        } else {
+            link.classList.remove('active-link');
+        }
+    });
+}
+
+// Запускаем подсветку при загрузке страницы
+window.addEventListener('DOMContentLoaded', highlightCurrentPage);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Проверяем, какой язык был сохранен
+    const savedLang = localStorage.getItem('selectedLang');
+    
+    if (savedLang && translations[savedLang]) {
+        // Если нашли сохраненный — включаем его
+        changeLang(savedLang);
+    } else {
+        // Если зашли первый раз — ставим польский (или тот, что хочешь базовым)
+        changeLang('pl');
+    }
+});
+
+function toggleMobileMenu() {
+    const nav = document.querySelector('.custom-nav');
+    const btn = document.querySelector('.menu-toggle');
+    const icon = btn.querySelector('i');
+    
+    if (nav && icon) {
+        nav.classList.toggle('mobile-active'); // Показываем список
+        btn.classList.toggle('active');        // Запускаем вращение через CSS
+        
+        // Плавная замена иконки
+        if (nav.classList.contains('mobile-active')) {
+            icon.classList.replace('fa-bars', 'fa-xmark');
+        } else {
+            icon.classList.replace('fa-xmark', 'fa-bars');
+        }
+    }
+}
+
+</script>
+
+
+
+<footer style="background: #222; color: #fff; padding: 60px 0 20px;">
+    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-start;">
+
+        <footer class="mobile-footer" style="background: #222; color: #fff;">
+    <div class="container footer-container-mobile">
+        
+        <div style="flex: 1; min-width: 250px;">
+    <img src="img/footerlogo.png" alt="Jafep" class="footer-logo-img">
+    
+    <p id="footer-desc" style="font-size: 0.9rem; color: #ccc; margin-top: 20px;">
+        Hiszpańska tradycja i nowoczesna technologia w produkcji farb i lakierów. Jakość potwierdzona certyfikatami na całym świecie.
+    </p>
+</div>
+        <div style="flex: 1; min-width: 150px;">
+            <h4 id="footer-nav-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Menu</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                <li><a href="about.html" id="f-menu-about" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">O nas</a></li>
+                <li><a href="franchise.html" id="f-menu-franchise" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Franczyza</a></li>
+                <li class="dropdown footer-dropdown">
+            <a href="javascript:void(0)" class="dropbtn" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">
+                <span id="f-menu-where-text">Gdzie kupić?</span>
+                <i class="fas fa-chevron-down nav-arrow"></i>
+            </a>
+            <div class="dropdown-content">
+                <a href="consumer.html" id="f-menu-where-cons">Jestem konsumentem</a>
+                <a href="distributor.html" id="f-menu-where-dist">Jestem dystrybutorem</a>
+            </div>
+        </li>
+                <li><a href="catalogues.html" id="f-menu-catalogues" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Katalogi</a></li>
+                <li><a href="products.html" id="f-menu-products" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Produkty</a></li>
+                <li><a href="blog.html" id="f-menu-blog" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Blog</a></li>
+                <li><a href="contact.html" id="f-menu-contact" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Kontakt</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 150px;">
+            <h4 id="footer-legal-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Info</h4>
+            <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
+                <li><a href="privacy.html" id="f-legal-privacy" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Polityka prywatności</a></li>
+                <li><a href="cookies.html" id="f-legal-cookies" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Polityka cookies</a></li>
+                <li><a href="legal.html" id="f-legal-notice" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Nota prawna</a></li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 200px;">
+            <h4 id="footer-contact-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Kontakt</h4>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 791 179 394</p>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 733 596 117</p>
+            <p style="font-size: 0.9rem; color: #ccc;">+48 519 648 311</p>
+            <p style="font-size: 0.9rem; color: #ccc;">jafeppolska@gmail.com</p>
+            <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 15px;">
+                <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
+                 <a href="#" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; border-top: 1px solid #444; margin-top: 40px; padding-top: 20px; font-size: 0.8rem; color: #777;">
+        © 2026 Jafep Polska. <span id="footer-rights">Wszystkie prawa zastrzeżone.</span>
+    </div>
+</footer>
+
+
+<div class="tg-wrapper">
+    <div class="tg-tooltip" id="tg-tooltip-text">Potrzebujesz pomocy? <strong>Napisz do nas</strong></div>
+    <a href="https://t.me/+48791179394" class="tg-float" target="_blank">
+        <i class="fab fa-telegram-plane"></i>
+    </a>
+</div>
+
+</body>
+</html>
