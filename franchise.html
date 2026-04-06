@@ -462,7 +462,7 @@
 "cat-btn": "Смотреть каталоги",
 "fran-subtitle": "Франшиза с Jafep",
         "fran-main-title": "Присоединяйтесь<br>к нам!",
-        "fran-p1": "С <strong>1980</strong> года мы развиваем важный Франчайзинговый Проект с политикой дистрибуции и философией продаж, результатом которой стала <strong>важная коммерческая сеть в стратегических точках Испании</strong>.",
+        "fran-p1": "С <strong>1980</strong> года мы развиваем важный Проект Франшизы с политикой дистрибуции и философией продаж, результатом которой стала <strong>важная коммерческая сеть в стратегических точках Испании</strong>.",
         "fran-p2": "Tiendas Jafep — это <strong>общенациональная сеть магазинов</strong>, занимающихся эксклюзивной дистрибуцией <strong>Pinturas Jafep</strong> и всех видов аксессуаров для декорирования (малярное оборудование, кисти и инструменты, ламинат, обои, бордюры, товары для творчества, стекловолокно).",
         "fran-p3": "Все точки продаж <strong>стратегически</strong> организованы и <strong>доступны</strong> конечному потребителю.",
         "fran-p4": "Быть франчайзи — значит быть частью великой группы Pinturas Jafep, <strong>лидера</strong> в своем секторе и с <strong>большим опытом</strong> на рынке.",
@@ -570,7 +570,7 @@
         "cat-btn": "Переглянути каталоги",
         "fran-subtitle": "Франшиза з Jafep",
         "fran-main-title": "Приєднуйтесь<br>до нас!",
-        "fran-p1": "З <strong>1980</strong> року ми розвиваємо важливий Франчайзинговий Проект з політикою дистрибуції та філософією продажів, результатом якої стала <strong>важлива комерційна мережа в стратегічних точках Іспанії</strong>.",
+        "fran-p1": "З <strong>1980</strong> року ми розвиваємо важливий Проект Франшизы з політикою дистрибуції та філософією продажів, результатом якої стала <strong>важлива комерційна мережа в стратегічних точках Іспанії</strong>.",
         "fran-p2": "Tiendas Jafep — це <strong>загальнонаціональна мережа магазинів</strong>, що займаються ексклюзивною дистрибуцією <strong>Pinturas Jafep</strong> та всіх видів аксесуарів для декорування (малярне обладнання, пензлі та інструменти, ламінат, шпалери, бордюри, товари для творчості, скловолокно).",
         "fran-p3": "Усі точки продажу <strong>стратегічно</strong> організовані та <strong>доступні</strong> кінцевому споживачеві.",
         "fran-p4": "Бути франчайзі — означає бути частиною великої групи Pinturas Jafep, <strong>лідера</strong> у своєму секторі та з <strong>великим досвідом</strong> на ринку.",
@@ -602,6 +602,15 @@ let currentLang = 'pl';
         const t = translations[lang];
         if (!t) return;
 
+        localStorage.setItem('selectedLang', lang);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLang');
+    if (savedLang) {
+        changeLang(savedLang); // Автоматически включаем то, что было выбрано
+    }
+});
+
           function toggleMobileMenu() {
     const nav = document.querySelector('.custom-nav');
     const icon = document.querySelector('.menu-toggle i');
@@ -621,21 +630,6 @@ let currentLang = 'pl';
         }
     }
 }
-
-        function changeLang(lang, event) {
-    localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
-    currentLang = lang;
-    const t = translations[lang];
-    if (!t) return;
-
-               localStorage.setItem('selectedLang', lang);
-
-        document.addEventListener('DOMContentLoaded', () => {
-    const savedLang = localStorage.getItem('selectedLang');
-    if (savedLang) {
-        changeLang(savedLang); // Автоматически включаем то, что было выбрано
-    }
-});
 
         function changeLang(lang, event) {
     localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
