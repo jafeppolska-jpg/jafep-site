@@ -428,97 +428,202 @@ margin: 20px auto; /* Отступ сверху, чтобы шапка "пари
     }
 
     /* --- SECTION: ABOUT INTRO --- */
+/* --- ИСПРАВЛЕНИЕ ДЛЯ МОБИЛЬНОЙ ВЕРСИИ ABOUT.HTML --- */
+
+
     .about-grid-container {
-        flex-direction: column !important; /* Картинка над текстом */
-        gap: 30px !important;
-        padding: 40px 0 !important;
+        display: block !important;       /* ОТМЕНЯЕМ СЕТКУ (GRID) ИЗ 2 КОЛОНОК */
+        width: 100% !important;
+        padding: 40px 20px !important;   /* Отступы от краев экрана */
+        text-align: center !important;    /* Всё содержимое по центру */
     }
 
-    .about-visuals, .about-text-content {
+    .about-visuals {
+        display: block !important;
         width: 100% !important;
-        text-align: center;
+        margin-bottom: 20px !important;  /* Отступ под микроскопом */
+    }
+
+    .about-visuals img {
+        max-width: 150px !important;     /* Размер иконки как в твоем примере */
+        margin: 0 auto !important;       /* Центрируем картинку */
+    }
+
+    .about-text-content {
+        display: block !important;       /* Текст теперь идет отдельным этажом ниже */
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        text-align: center !important;
     }
 
     .about-text-content h1 {
-        font-size: 2.2rem !important; /* Уменьшаем огромный заголовок */
-        line-height: 1.1 !important;
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;   /* Заголовок строго по центру */
+        margin: 0 0 25px 0 !important;   /* Отступ вниз до первого абзаца */
+        font-size: 2rem !important;
+    }
+
+    .about-text-content p {
+        display: block !important;
+        width: 100% !important;          /* Текст занимает всю ширину */
+        text-align: center !important;   /* ТЕКСТ ПО ЦЕНТРУ */
+        margin: 0 0 20px 0 !important;   /* ОТСТУП МЕЖДУ АБЗАЦАМИ */
+        font-size: 1.05rem !important;
+        line-height: 1.6 !important;
     }
 
     .about-icons-row {
+
         justify-content: center !important;
+
         gap: 20px !important;
+
     }
+
+
 
     /* --- SECTION: STATS --- */
+
     .stats-grid-container {
+
         flex-direction: column !important;
+
         text-align: center;
+
         gap: 40px !important;
+
     }
+
+
 
     #stats-main-title {
+
         font-size: 2rem !important;
+
     }
+
+
 
     .stats-grid {
+
         grid-template-columns: 1fr !important; /* Статистика в одну колонку */
+
         gap: 20px !important;
+
     }
+
+
 
     /* Убираем разделительные линии (крест), которые на мобилке все ломают */
+
     .stats-grid::before, .stats-grid::after {
+
         display: none !important;
+
     }
+
+
 
     .stat-box {
+
         justify-content: center !important;
+
         border-bottom: 1px solid #eee;
+
         padding-bottom: 20px !important;
+
     }
+
+
 
     /* --- SECTION: QUALITY & ENVIRONMENT --- */
+
     .quality-grid {
+
         flex-direction: column !important;
+
         gap: 30px !important;
+
     }
+
+
 
     #quality-title {
+
         font-size: 2rem !important;
+
         text-align: center;
+
     }
+
+
 
     .quality-images {
+
         width: 100% !important;
+
     }
+
+
 
     /* --- SECTION: R&D (Исследования) --- */
+
     .rnd-title-group {
+
         flex-direction: column !important;
+
         text-align: center;
+
         gap: 10px !important;
+
     }
+
+
 
     #rnd-title-text {
+
         font-size: 2.5rem !important; /* Уменьшаем с 5rem */
+
     }
+
+
 
     .rnd-decoration-line {
+
         width: 100px !important; /* Короткая линия по центру */
+
         margin: 15px auto !important;
+
     }
+
+
 
     .rnd-grid {
+
         grid-template-columns: 1fr !important; /* Текст в одну колонку */
+
         gap: 20px !important;
+
     }
+
+
 
     .rnd-col p {
+
         font-size: 1rem !important;
+
         text-align: center;
+
     }
 
+
+
     .rnd-main-icon {
+
         font-size: 3rem !important;
+
     }
 
     /* --- СТРАНИЦА КАТАЛОГОВ (katalogi.html) --- */
@@ -3344,22 +3449,28 @@ img {
     background-color: #8dc63f;
     color: #ffffff;
     padding: 80px 0;
+
 }
 
 /* Блок заголовка */
 .rnd-top-header {
     width: 100%;
     margin-bottom: 50px; /* Отступ от заголовка до текста */
+     background-color: #8dc63f;
 }
 
 .rnd-title-group {
     display: flex;
     align-items: center;
     gap: 30px;
+    color: #ffffff;
+     background-color: #8dc63f;
 }
 
 .rnd-main-icon {
     font-size: 4.5rem;
+    color: #ffffff;
+    background-color: #8dc63f;
 }
 
 #rnd-title {
@@ -3368,13 +3479,16 @@ img {
     margin: 0;
     line-height: 1;
     letter-spacing: -1px;
+    color: #ffffff;
+     background-color: #8dc63f;
 }
 
 .rnd-decoration-line {
     width: 300px;
     height: 8px;
-    background: #fff;
+   background-color: #8dc63f;
     margin-top: 25px;
+
 }
 
 /* Блок текста */
@@ -3382,12 +3496,15 @@ img {
     display: grid;
     grid-template-columns: 1fr 1fr; /* Две колонки */
     gap: 60px;
+     background-color: #8dc63f;
 }
 
 .rnd-col p {
     font-size: 1.15rem;
     line-height: 1.8;
     margin: 0;
+    color: #ffffff;
+     background-color: #8dc63f;
 }
 
 .franchise-grid {
@@ -3396,6 +3513,7 @@ img {
     gap: 60px;
     align-items: center;
     padding: 60px 0;
+    background-color: #8dc63f;
 }
 
 /* Контейнер для логотипа в секции */
@@ -4099,6 +4217,9 @@ html, body {
     width: 100%;
     position: relative;
 }
+
+
+
 
 
 
