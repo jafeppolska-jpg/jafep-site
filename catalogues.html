@@ -75,7 +75,7 @@
                 <div class="cat-thumb"><img src="img/cat-telacril.jpg" alt="Telacril"></div>
                 <h3 id="cat-t-telacril">Dosier Telacril Jafep</h3>
                 <div class="cat-buttons">
-                    <a href="pdf/Dosier Telacril Jafep.pdf" target="_blank" class="cat-btn"><i class="fas fa-file-pdf"></i> <span>OTWÓRZ PDF</span></a>
+                    <a href="pdf/Materiały Telacril Jafep.pdf" target="_blank" class="cat-btn"><i class="fas fa-file-pdf"></i> <span>OTWÓRZ PDF</span></a>
                 </div>
             </div>
 
@@ -270,7 +270,7 @@
        "cat-hero-title": "Katalogi i Karty Kolorów",
         "cat-hero-subtitle": "Wszystkie informacje techniczne i inspiracje w jednym miejscu.",
         "cat-btn-text": "OTWÓRZ PDF",
-        "cat-t-telacril": "Dosier Telacril Jafep",
+        "cat-t-telacril": "Materiały Telacril Jafep",
         "cat-t-vivos": "Mate Extra (Żywe kolory)",
         "cat-t-petrex-m": "Petrex 5 Moździerz",
         "cat-t-petrex": "Petrex 5 (Fasady)",
@@ -372,7 +372,7 @@
  "cat-hero-title": "Catalogs and Color Cards",
         "cat-hero-subtitle": "All technical information and inspiration in one place.",
         "cat-btn-text": "OPEN PDF",
-        "cat-t-telacril": "Telacril Jafep Dossier",
+        "cat-t-telacril": "Telacril Jafep Materials",
         "cat-t-vivos": "Mate Extra (Vivid Colors)",
         "cat-t-petrex-m": "Petrex 5 Mortero",
         "cat-t-petrex": "Petrex 5 (Facades)",
@@ -471,7 +471,7 @@
      "cat-hero-title": "Каталоги и Цветовые Карты",
         "cat-hero-subtitle": "Вся техническая информация и вдохновение в одном месте.",
         "cat-btn-text": "ОТКРЫТЬ PDF",
-        "cat-t-telacril": "Досье Telacril Jafep",
+        "cat-t-telacril": "Материалы Telacril Jafep",
         "cat-t-vivos": "Mate Extra (Яркие цвета)",
         "cat-t-petrex-m": "Petrex 5 Mortero (Штукатурка)",
         "cat-t-petrex": "Petrex 5 (Фасады)",
@@ -570,7 +570,7 @@
   "cat-hero-title": "Каталоги та Кольорові Карти",
         "cat-hero-subtitle": "Вся технічна інформація та натхнення в одному місці.",
         "cat-btn-text": "ВІДКРИТИ PDF",
-        "cat-t-telacril": "Досьє Telacril Jafep",
+        "cat-t-telacril": "Матерiали Telacril Jafep",
         "cat-t-vivos": "Mate Extra (Яскраві кольори)",
         "cat-t-petrex-m": "Petrex 5 Mortero (Штукатурка)",
         "cat-t-petrex": "Petrex 5 (Фасади)",
@@ -593,6 +593,15 @@ let currentLang = 'pl';
         currentLang = lang;
         const t = translations[lang];
         if (!t) return;
+
+        localStorage.setItem('selectedLang', lang);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLang');
+    if (savedLang) {
+        changeLang(savedLang); // Автоматически включаем то, что было выбрано
+    }
+});
 
         function changeLang(lang, event) {
     localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
