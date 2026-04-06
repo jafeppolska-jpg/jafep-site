@@ -627,6 +627,21 @@ let currentLang = 'pl';
     currentLang = lang;
     const t = translations[lang];
     if (!t) return;
+
+               localStorage.setItem('selectedLang', lang);
+
+        document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('selectedLang');
+    if (savedLang) {
+        changeLang(savedLang); // Автоматически включаем то, что было выбрано
+    }
+});
+
+        function changeLang(lang, event) {
+    localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
+    currentLang = lang;
+    const t = translations[lang];
+    if (!t) return;
     
     // ... весь твой остальной код перевода (меню, заголовки и т.д.) ...
 }
