@@ -674,12 +674,6 @@ let currentLang = 'pl';
     }
 });
 
-        function changeLang(lang, event) {
-    localStorage.setItem('selectedLang', lang); // ЗАПОМИНАЕМ ВЫБОР
-    currentLang = lang;
-    const t = translations[lang];
-    if (!t) return;
-
      function toggleMobileMenu() {
     const nav = document.querySelector('.custom-nav');
     const icon = document.querySelector('.menu-toggle i');
@@ -1030,6 +1024,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
 function toggleMobileMenu() {
     const nav = document.querySelector('.custom-nav');
     const btn = document.querySelector('.menu-toggle');
@@ -1122,6 +1117,10 @@ function toggleMobileMenu() {
         <i class="fab fa-telegram-plane"></i>
     </a>
 </div>
+
+<script src="js/translations.js"></script> 
+    
+    <script src="js/script.js"></script>
 
 </body>
 </html>
