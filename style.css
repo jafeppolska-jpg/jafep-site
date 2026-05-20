@@ -4377,13 +4377,174 @@ html, body {
     position: relative;
 }
 
+/* --- АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК ТОВАРОВ --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 20px 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+/* Сама карточка-ссылка */
+.product-card-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+    /* Эффект плавного появления при загрузке страницы */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
 
+.product-card {
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    /* Плавный переход для всех эффектов наведения */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                border-color 0.4s ease;
+    box-sizing: border-box;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
+/* Контейнер картинки */
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+    padding: 10px;
+}
 
+.product-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
 
+/* Название товара */
+.product-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #222;
+    margin: 10px 0;
+    line-height: 1.4;
+    transition: color 0.3s ease;
+}
 
+/* Индикатор Allegro */
+.allegro-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: #f5f5f5;
+    color: #ff5a00; /* Фирменный оранжевый цвет Allegro */
+    font-weight: bold;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid #ff5a00;
+    margin-top: auto;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* --- ЭФФЕКТЫ НАВЕДЕНИЯ (HOVER) --- */
+.product-card-link:hover .product-card {
+    transform: translateY(-8px); /* Карточка плавно приподнимается */
+    box-shadow: 0 12px 24px rgba(255, 90, 0, 0.15); /* Тень приобретает оттенок Allegro */
+    border-color: #ff5a00;
+}
+
+.product-card-link:hover .product-image-wrapper img {
+    transform: scale(1.04); /* Картинка слегка увеличивается */
+}
+
+.product-card-link:hover .product-title {
+    color: #ff5a00; /* Название меняет цвет */
+}
+
+.product-card-link:hover .allegro-badge {
+    background-color: #ff5a00; /* Кнопка полностью закрашивается */
+    color: #ffffff;
+}
+
+/* --- СТРОГАЯ СЕТКА ДЛЯ МОБИЛОК (УБИРАЕТ ВЫЛЕТ ЗА ЭКРАН) --- */
+@media (max-width: 480px) {
+    .product-grid {
+        /* Жестко фиксируем 2 колонки, чтобы ничего не улетало вбок */
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important; 
+        padding: 15px 5px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        overflow: hidden !important; /* Запрещаем ломать экран */
+    }
+
+    .product-card-link {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .product-card {
+        padding: 10px !important;
+        border-radius: 8px !important;
+        height: 100% !important;
+    }
+
+    .product-image-wrapper {
+        height: 120px !important; /* Немного зажимаем высоту банок, чтобы они помещались в сетку */
+        margin-bottom: 8px !important;
+    }
+
+    .product-title {
+        font-size: 0.8rem !important; /* Компактный шрифт, чтобы текст не разносил блок */
+        height: 3.9em !important;
+        margin-bottom: 8px !important;
+    }
+
+    .allegro-badge {
+        font-size: 0.7rem !important;
+        padding: 8px 4px !important;
+        gap: 4px !important;
+    }
+}
+
+/* Фикс для совсем микроскопических экранов (меньше 340px) */
+@media (max-width: 340px) {
+    .product-grid {
+        /* Если телефон совсем узкий, выстраиваем в 1 колонку */
+        grid-template-columns: 1fr !important;
+    }
+    .product-image-wrapper {
+        height: 150px !important;
+    }
+}
 
 
 
