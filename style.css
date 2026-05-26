@@ -4546,6 +4546,28 @@ html, body {
     }
 }
 
+/* --- СТИЛИ ДЛЯ ОПТИМИЗАЦИИ КАРТОЧЕК КАТАЛОГОВ --- */
+.catalogue-item {
+    cursor: pointer;
+}
+
+.cat-thumb {
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.catalog-thumb-img {
+    width: 100%;
+    height: auto;
+    /* Без блюра — просто мягкое проявление картинки за 0.4 секунды при подмене */
+    transition: opacity 0.4s ease, transform 0.4s ease; 
+    opacity: 0.95;
+}
+
+.catalog-thumb-img.hd-loaded {
+    opacity: 1 !important;
+}
+
 
 
 
