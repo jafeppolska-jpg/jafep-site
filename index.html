@@ -1,23 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-52S45JPF');</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18183885274"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18183885274');
-  
-  // Вот эта строчка ниже — всё, что было нужно от кода покупки!
-  gtag('event', 'conversion', {'send_to': 'AW-18183885274/rwdXCM6KibMcENqj4N5D'});
-</script>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jafep Polska | Hiszpańskie Tradycje, Europejskie Standardy</title>
@@ -27,23 +10,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="icon" type="image/png" href="img/favicon.png">
 </head>
-    <!-- SEO для Польши (Основное) -->
-<meta name="keywords" lang="pl" content="farby warszawa, lakiery, jafep polska, farby do wnętrz, farby elewacyjne, sklep z farbami bartycka, materiały lakiernicze">
-
-<!-- SEO для Англоязычных клиентов -->
-<meta name="keywords" lang="en" content="paints warsaw, varnishes poland, jafep paints, interior paints, exterior paints, professional coatings">
-
-<!-- SEO для Русскоязычных (строители, мастера) -->
-<meta name="keywords" lang="ru" content="краски варшава, лаки, малярные работы польша, купить краску варшава, jafep польша, фасадные краски, промышленные краски">
-
-<!-- SEO для Украинских мастеров -->
-<meta name="keywords" lang="uk" content="фарби варшава, лаки польща, купити фарбу варшава, оздоблювальні матеріали, малярні роботи, jafep варшава">
 <body>
-
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-52S45JPF"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 
 <header class="main-header">
@@ -136,14 +103,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="card-img"><img src="img/facade.png" alt="Elewacje"></div>
             <h3 id="prod-1-title">Farby Elewacyjne</h3>
             <p id="prod-1-text">Maksymalna ochrona budynków przed warunkami atmosferycznymi. Legendarny Pétrex 5.</p>
-            <span class="more prod-soon">Wkrótce w ofercie →</span>
+            <a href="facades.html" class="more" id="prod-1-link" data-translate="prod-view-offer">Zobacz ofertę →</a>
         </div>
 
-        <div class="product-card">
+       <div class="product-card">
             <div class="card-img"><img src="img/interior.png" alt="Wnętrza"></div>
             <h3 id="prod-2-title">Farby do Wnętrz</h3>
             <p id="prod-2-text">Ekologiczne i trwałe farby do salonów, kuchni i obiektów użyteczności publicznej.</p>
-            <span class="more prod-soon">Wkrótce w ofercie →</span>
+            <a href="interiors.html" class="more" id="prod-2-link" data-translate="prod-view-offer">Zobacz ofertę →</a>
         </div>
 
         <div class="product-card">
@@ -439,6 +406,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 "menu-where": "Gdzie kupić?",
         "menu-where-cons": "Jestem konsumentem",
         "menu-where-dist": "Jestem dystrybutorem",
+        "prod-view-offer": "Zobacz ofertę →",
 
         
     // ...
@@ -524,6 +492,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 "menu-where": "Where to buy?",
         "menu-where-cons": "I am a consumer",
         "menu-where-dist": "I am a distributor",
+        "prod-view-offer": "View offer →",
+       
           
         },
         ru: {
@@ -606,6 +576,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 "menu-where": "Где купить?",
         "menu-where-cons": "Я потребитель",
         "menu-where-dist": "Я дистрибьютор",
+        "prod-view-offer": "Посмотреть предложение →",
 
         },
         ua: {
@@ -688,6 +659,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         "menu-where": "Де купити?",
         "menu-where-cons": "Я споживач",
         "menu-where-dist": "Я дистриб'ютор",
+        "prod-view-offer": "Подивитися пропозицію →",
         }
     };
 
@@ -697,6 +669,8 @@ let currentLang = 'pl';
         currentLang = lang;
         const t = translations[lang];
         if (!t) return;
+
+        document.querySelectorAll('[data-translate]').forEach(el => { const key = el.getAttribute('data-translate'); if (t[key]) el.innerText = t[key]; });
 
            localStorage.setItem('selectedLang', lang);
 
@@ -1130,11 +1104,11 @@ function toggleMobileMenu() {
             <p style="font-size: 0.9rem; color: #ccc;">+48 519 648 311</p>
             <p style="font-size: 0.9rem; color: #ccc;">jafeppolska@gmail.com</p>
             <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 15px;">
-                <a href="https://www.facebook.com/share/1GzEH965iM/" style="color: #fff;"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/jafeppolska?igsh=MWtiY20waTN4N2s0dA==" style="color: #fff;"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@jafeppolska?_r=1&_t=ZN-95KAgA3dLy2" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
-                <a href="https://x.com/JafepPolska" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com/feed/" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
+                 <a href="#" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
