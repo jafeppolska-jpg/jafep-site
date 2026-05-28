@@ -1924,32 +1924,163 @@ footer {
     font-family: "Font Awesome 6 Brands" !important;
 }
 
+/* --- КОНТЕЙНЕР ПОИСКА (Твоя база + исправления) --- */
 .search-box {
     position: relative;
     display: flex;
     align-items: center;
-    flex: 0 1 150px; /* Он будет занимать максимум 150px, но может сужаться */
-    margin: 0 10px;
+    flex: 0 1 220px; /* Увеличили базовый размер до 220px, чтобы текст и банки помещались */
+    margin: 0 15px;
+    transition: flex 0.3s ease; /* Плавное расширение при клике */
 }
 
+/* Твой инпут с эффектом расширения */
 .search-box input {
     width: 100%;
-    padding: 6px 30px 6px 12px;
+    padding: 7px 35px 7px 12px;
     border-radius: 20px;
     border: 1px solid #ddd;
     font-size: 0.85rem;
     outline: none;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Когда нажимаем на поиск, он плавно увеличивается, чтобы результаты было лучше видно */
+.search-box:focus-within {
+    flex: 0 1 300px;
 }
 
 .search-box input:focus {
-    border-color: #008d36; /* Зеленый фокус */
+    border-color: #8dc63f; /* Твоя фирменная зеленая рамка Jafep */
+    box-shadow: 0 0 8px rgba(141, 198, 63, 0.2);
 }
 
+/* Иконка лупы */
 .search-box i {
     position: absolute;
-    right: 10px;
+    right: 12px;
     color: #999;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
+    pointer-events: none; /* Чтобы клик проходил сквозь лупу на инпут */
+}
+
+/* --- ВЫПАДАЮЩИЙ БЛОК РЕЗУЛЬТАТОВ (Окна с банками) --- */
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    min-width: 280px; 
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    margin-top: 8px;
+    max-height: 320px;
+    overflow-y: auto;
+    z-index: 9999;
+    display: none;
+    border: 1px solid #eee;
+}
+
+/* Элемент товара в выдаче */
+.search-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: #222;
+    font-size: 0.85rem;
+    transition: background 0.2s ease;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.search-item:last-child {
+    border-bottom: none;
+}
+
+.search-item:hover {
+    background: #f9f9f9;
+}
+
+/* Маленькая банка краски */
+.search-item-img {
+    width: 35px;
+    height: 35px;
+    object-fit: contain; 
+    flex-shrink: 0;
+    background: #fff;
+}
+
+.search-item-info {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Защита от вылезания текста */
+}
+
+/* Название товара: добавляем правила против ломания слов */
+.search-item-title {
+    font-weight: 600;
+    line-height: 1.3;
+    font-size: 0.85rem;
+    word-break: keep-all;      /* Не рвать слова по одной букве */
+    overflow-wrap: break-word; /* Переносить длинные слова целиком */
+}
+
+.search-item-category {
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 1px;
+}
+
+.search-no-results {
+    padding: 15px;
+    text-align: center;
+    color: #999;
+    font-size: 0.85rem;
+}
+
+/* --- АДАПТИВНОСТЬ ДЛЯ СМАРТФОНОВ (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .search-box {
+        flex: 1 1 100%; 
+        margin: 10px 0;
+        order: 3; 
+    }
+
+    .search-box:focus-within {
+        flex: 1 1 100%; 
+    }
+
+    /* На телефоне выпадашка фиксируется на весь экран, чтобы текст не сжимался в кашу */
+    .search-results {
+        position: fixed; 
+        left: 15px;
+        right: 15px;
+        width: calc(100% - 30px);
+        min-width: auto;
+        max-height: 280px; /* Делаем чуть ниже, чтобы на экране телефона всё помещалось */
+    }
+
+    /* Уменьшаем шрифты и отступы под мобилку */
+    .search-item {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .search-item-img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .search-item-title {
+        font-size: 0.75rem; /* Мелкий читаемый шрифт для мобильного */
+    }
+
+    .search-item-category {
+        font-size: 0.65rem;
+    }
 }
 
 /* Языки - чтобы не переносились */
@@ -2422,21 +2553,16 @@ footer {
     flex-shrink: 0; /* Чтобы кружок не сплющило */
 }
 
-/* --- Секция Франшизы (Длинная красная полоса) --- */
 .franchise-section {
-    padding: 100px 0;
+    padding: 120px 0; /* Увеличили отступы сверху и снизу, чтобы секция была высокой и красивой */
     
-    /* --- ВОТ ЗДЕСЬ ВСЯ МАГИЯ --- */
-    /* 1 слой (верхний): Полупрозрачный красный (rgba) */
-    /* 2 слой (нижний): Сама картинка (url) */
+    /* Твоя магия с фото */
     background: 
-        linear-gradient(rgba(227, 6, 19, 0.9), rgba(227, 6, 19, 0.9)), 
-        url('https://images.unsplash.com/photo-1601628036283-e7401d8b9d33?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+        linear-gradient(rgba(227, 6, 19, 0.8), rgba(227, 6, 19, 0.8)), 
+        url('img/shop.jpg') center/cover no-repeat fixed;
     
-    /* fixed добавляет эффект параллакса при скролле (картинка чуть движется) */
     position: relative;
-    display: flex;
-    align-items: center;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -2950,14 +3076,14 @@ body {
     border-color: #7ab332; /* Цвет кружка чуть темнеет */
 }
 
-/* Квадратная карта внутри текстового блока */
+/* Квадратная карта внутри текстового блока (оставляем твои стили без изменений) */
 .contact-map-wrapper-square {
     width: 100%;
-    max-width: 520px; /* Сделали еще немного шире */
+    max-width: 520px; 
     aspect-ratio: 1 / 1;
     border-radius: 4px;
     overflow: hidden;
-    border: 2px solid rgba(141, 198, 63, 0.4); /* Фирменная зеленая рамка */
+    border: 2px solid rgba(141, 198, 63, 0.4); 
     
     /* Стилизация под ч/б */
     filter: grayscale(100%) contrast(1.1);
@@ -2969,13 +3095,15 @@ body {
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-/* Остальные стили секции (Варшава на фоне) */
+/* --- ВОТ ЗДЕСЬ ЗАМЕНИЛИ ФОН НА ВЫВЕСКУ МАГАЗИНА --- */
 .feedback-section {
     position: relative;
     padding: 100px 0;
-    background: url('https://images.unsplash.com/photo-1596707328608-f404090bdc60?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat fixed;
+    /* Вместо ссылки на Unsplash теперь загружается твое фото shop1.jpg */
+    background: url('img/shop1.jpg') center/cover no-repeat fixed;
 }
 
+/* Оверлей оставляем, он сделает фото shop1.jpg темным бэкграундом, чтобы белый текст и форма читались идеально */
 .feedback-bg-overlay {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -2983,6 +3111,7 @@ body {
     z-index: 1;
 }
 
+/* Сетка контента (текст + форма) */
 .feedback-grid {
     position: relative;
     z-index: 2;
@@ -2990,6 +3119,7 @@ body {
     justify-content: space-between;
     gap: 50px;
 }
+
 
 /* --- НОВАЯ ШАПКА --- */
 .main-header {
@@ -4623,7 +4753,202 @@ html, body {
         margin: 0 auto !important;
     }
 }
+/* Плавное появление всей секции при скролле */
+.reviews-premium-section {
+    padding: 80px 0;
+    background: #ffffff;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease-out;
+}
 
+.reviews-premium-section.active {
+    opacity: 1;
+    transform: translateY(0);
+}
 
+/* Главный флекс-контейнер всей секции */
+.reviews-main-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+}
 
+/* Заголовок слева — фиксируем ширину, чтобы не сжимался */
+.reviews-side-title {
+    flex: 0 0 280px; 
+    text-align: left;
+}
 
+.reviews-side-title h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #222;
+    margin: 0;
+    white-space: normal; /* Запрещаем ломать по одной букве */
+}
+
+/* Контейнер для широкого слайдера */
+.reviews-slider-container {
+    flex: 1;
+    max-width: 650px; 
+}
+
+/* ГОРИЗОНТАЛЬНАЯ КАРТОЧКА (Стиль комментариев YouTube) */
+.review-horizontal-card {
+    background: #ffffff;
+    border: 1px solid #eeeeee;
+    border-radius: 14px;
+    padding: 25px 30px;
+    display: flex;
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    gap: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.03);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Круглая аватарка — жестко фиксируем размеры */
+.rev-p-avatar {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #fff;
+    flex-shrink: 0; /* Запрещаем аватарке сжиматься */
+}
+
+/* Правая текстовая часть отзыва */
+.rev-right-part {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.rev-top-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.rev-p-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.rev-p-stars {
+    color: #f1c40f;
+    font-size: 0.85rem;
+}
+
+/* ИКОНКИ ДЛЯ ВСЕГО БЛОКА: ВСЕГДА ЗЕЛЕНЫЕ */
+.rev-google-link, .social-p-links a {
+    color: #8dc63f !important; /* Твой фирменный зеленый Jafep */
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Правая часть: Блок соцсетей */
+.reviews-side-social {
+    flex: 0 0 220px;
+    text-align: left;
+}
+
+.reviews-side-social h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #222;
+    margin: 0 0 15px 0;
+}
+
+.social-p-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-p-links a {
+    font-size: 1.6rem;
+}
+
+/* Эффект увеличения при наведении на иконки соцсетей */
+.social-p-links a:hover {
+    transform: scale(1.25);
+    filter: brightness(0.9);
+}
+
+/* Текст отзыва */
+.rev-p-text {
+    font-size: 1.05rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Точки управления слайдером */
+.slider-p-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.p-dot {
+    height: 9px;
+    width: 9px;
+    margin: 0 5px;
+    background: #dddddd;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.p-dot.active {
+    background: #e30613; /* Красный маркер активного слайда */
+    transform: scale(1.2);
+}
+
+/* МОБИЛЬНАЯ АДАПТИВНОСТЬ */
+@media (max-width: 992px) {
+    .reviews-main-flex {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
+    }
+    .reviews-side-title, .reviews-side-social {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+    .reviews-side-title h2 {
+        max-width: 100%;
+    }
+    .social-p-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .review-horizontal-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+    .rev-top-info {
+        flex-direction: column;
+        gap: 5px;
+    }
+    .rev-right-part {
+        align-items: center;
+    }
+}
