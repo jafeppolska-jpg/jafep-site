@@ -46,11 +46,10 @@
             </ul>
         </nav>
 
-        <div class="header-tools">
-            <div class="search-box">
-                <input type="text" id="search-input" placeholder="Szukaj...">
-                <i class="fas fa-search"></i>
-            </div>
+        <div class="search-box">
+    <input type="text" id="search-input" placeholder="Szukaj...">
+    <i class="fas fa-search"></i>
+    <div id="search-results" class="search-results"></div> </div>
             <div class="lang-switch">
                 <span onclick="changeLang('pl', event)" class="lang-btn active">PL</span>
                 <span onclick="changeLang('en', event)" class="lang-btn">EN</span>
@@ -90,6 +89,191 @@
 </main>
 
 <script>
+// 2. База данных продуктов для поиска[cite: 1, 2, 3, 5, 6]
+const productsData = [
+    {
+        title: {
+            pl: "Farba Petrex 5 Akrylowa Biała Gładka Matowa",
+            ru: "Акриловая краска Petrex 5 Белая Гладкая Матовая",
+            en: "Petrex 5 Acrylic Paint White Smooth Matt",
+            ua: "Акрилова фарба Petrex 5 Біла Гладка Матова"
+        },
+        url: "products.html#petrex5", // Добавили якорь #petrex5
+        img: "img/petrex 5 rev.png",
+        tags: ["petrex5", "fasada", "sate", "impermeable", "beton", "фасадная", "атмосферостойкая", "facade"]
+    },
+    {
+        title: {
+            pl: "Sellacryl Lakier Penetrujący Mocujący",
+            ru: "Sellacryl Проникающий закрепляющий лак (грунт)",
+            en: "Sellacryl Penetrating Sealer / Fixative",
+            ua: "Sellacryl Проникаючий закріплюючий лак (грунт)"
+        },
+        url: "products.html#sellacryl", // Добавили якорь #sellacryl
+        img: "img/Sellacryl berniz.png",
+        tags: ["sellacryl", "grunt", "podkład", "fijador", "carbonatacion", "грунтовка", "пропитка", "primer"]
+    },
+    {
+        title: {
+            pl: "Farba Akrylowa Jafep Esencial Superkryjąca",
+            ru: "Акриловая краска Jafep Esencial Суперкрывистая",
+            en: "Jafep Esencial Acrylic Paint High Opacity",
+            ua: "Акрилова фарба Jafep Esencial Суперкривиста"
+        },
+        url: "products.html#esencial", // Добавили якорь #esencial
+        img: "img/Esencial.png",
+        tags: ["esencial", "wnętrza", "ściany", "интерьерная", "стена", "interior", "walls"]
+    },
+    {
+        title: {
+            pl: "Biała Farba Akrylowa Premium Mate Extra",
+            ru: "Белая акриловая краска Премиум Mate Extra",
+            en: "Premium Mate Extra Acrylic White Paint",
+            ua: "Біла акрилова фарба Преміум Mate Extra"
+        },
+        url: "products.html#mate-extra", // Добавили якорь #mate-extra
+        img: "img/Mate Extra Acrillico.png",
+        tags: ["mate extra", "premium", "pladur", "perlita", "гипсокартон", "без запаха", "drywall"]
+    },
+    {
+        title: {
+            pl: "Farba Premium Biała Super Kryjąca Estrellas",
+            ru: "Краска Премиум Белая Суперкрывистая Estrellas",
+            en: "Premium White Super Cover Paint Estrellas",
+            ua: "Фарба Преміум Біла Суперкривиста Estrellas"
+        },
+        url: "products.html#estrellas", // Добавили якорь #estrellas
+        img: "img/estrallas.png",
+        tags: ["estrellas", "lateksowa", "wnętrza", "sufit", "латексная", "потолок", "latex", "ceiling"]
+    },
+    {
+        title: {
+            pl: "Premium Mate Extra Superkryjąca",
+            ru: "Premium Mate Extra Суперкрывистая (15л)",
+            en: "Premium Mate Extra Super Covering (15L)",
+            ua: "Premium Mate Extra Суперкривиста (15л)"
+        },
+        url: "products.html#mate-extra-15l", // Добавили якорь #mate-extra-15l
+        img: "img/Mate Extra supercubriente.png",
+        tags: ["supercubriente", "mate extra", "zmywalna", "zewnętrzna", "моющаяся", "washable"]
+    }
+];
+
+// 3. Функция переключения языка
+function changeLang(lang, event) {
+    currentLang = lang;
+    const t = translations[lang];
+    if (!t) return;
+
+    localStorage.setItem('selectedLang', lang);
+
+    // Перевод всех текстовых ID
+    const ids = [
+        'menu-about', 'menu-products', 'menu-contact', 'menu-catalogues', 'menu-franchise', 'menu-blog',
+        'menu-where-text', 'menu-where-cons', 'menu-where-dist',
+        'about-tag', 'about-main-title', 'about-main-desc', 'card-iso-text', 'card-rd-text',
+        'stats-main-title', 'stat-years-text', 'stat-m2-text', 'stat-tons-text', 'stat-dist-text',
+        'quality-title', 'rnd-title-text'
+    ];
+
+    ids.forEach(id => {
+        const el = document.getElementById(id);
+        if (el && t[id]) el.innerText = t[id];
+    });
+
+    // Перевод HTML блоков (R&D и Качество)
+    ['quality-p1', 'quality-p2', 'quality-p3', 'rnd-text-1', 'rnd-text-2'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el && t[id]) el.innerHTML = t[id].replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    });
+
+    // Плейсхолдер поиска
+    const sInput = document.getElementById('search-input');
+    if (sInput && t.searchPlace) sInput.placeholder = t.searchPlace;
+
+    // Обновление активной кнопки
+    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    if (event && event.target) {
+        event.target.classList.add('active');
+    } else {
+        document.querySelectorAll('.lang-btn').forEach(b => {
+            if(b.innerText.toLowerCase() === lang.toLowerCase()) b.classList.add('active');
+        });
+    }
+}
+
+// 4. Логика поиска
+function initSearch() {
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
+    if (!searchInput || !searchResults) return;
+
+    searchInput.addEventListener('input', function() {
+        const value = this.value.toLowerCase().trim();
+        searchResults.innerHTML = ''; 
+
+        if (value.length === 0) {
+            searchResults.style.display = 'none';
+            return;
+        }
+
+        const filtered = productsData.filter(item => {
+            const displayTitle = (item.title[currentLang] || item.title['pl']).toLowerCase();
+            return displayTitle.includes(value) || item.tags.some(tag => tag.includes(value));
+        });
+
+        if (filtered.length > 0) {
+            filtered.forEach(item => {
+                const displayTitle = item.title[currentLang] || item.title['pl'];
+                const link = document.createElement('a');
+                link.href = item.url;
+                link.className = "search-item";
+                link.innerHTML = `
+                    <img src="${item.img}" alt="${displayTitle}" class="search-item-img">
+                    <div class="search-item-info">
+                        <span class="search-item-title">${displayTitle}</span>
+                        <span class="search-item-category">Jafep Polska</span>
+                    </div>
+                `;
+                searchResults.appendChild(link);
+            });
+            searchResults.style.display = 'block';
+        } else {
+            searchResults.innerHTML = `<div class="search-no-results">Brak wyników</div>`;
+            searchResults.style.display = 'block';
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target) && !searchResults.contains(e.target)) {
+            searchResults.style.display = 'none';
+        }
+    });
+}
+
+// 5. Инициализация при загрузке
+document.addEventListener('DOMContentLoaded', () => {
+    initSearch();
+    const savedLang = localStorage.getItem('selectedLang') || 'pl';
+    changeLang(savedLang);
+    
+    // Запуск остальных функций
+    if (typeof startProductSlider === 'function') startProductSlider();
+    if (typeof highlightCurrentPage === 'function') highlightCurrentPage();
+});
+
+// 6. Мобильное меню
+function toggleMobileMenu() {
+    const nav = document.querySelector('.custom-nav');
+    const icon = document.querySelector('.menu-toggle i');
+    if (nav && icon) {
+        nav.classList.toggle('mobile-active');
+        const isOpen = nav.classList.contains('mobile-active');
+        icon.classList.toggle('fa-bars', !isOpen);
+        icon.classList.toggle('fa-xmark', isOpen);
+    }
+}
+
      const translations = {
         pl: {
             menuAbout: "O nas", menuProducts: "Produkty", menuContact: "Kontakt", searchPlace: "Szukaj...", "menu-products": "Produkty", 
@@ -906,11 +1090,11 @@ function toggleMobileMenu() {
             <p style="font-size: 0.9rem; color: #ccc;">+48 519 648 311</p>
             <p style="font-size: 0.9rem; color: #ccc;">jafeppolska@gmail.com</p>
             <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 15px;">
-            <a href="https://www.facebook.com/share/1GzEH965iM/" style="color: #fff;"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/jafeppolska?igsh=MWtiY20waTN4N2s0dA==" style="color: #fff;"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@jafeppolska?_r=1&_t=ZN-95KAgA3dLy2" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
-                <a href="https://x.com/JafepPolska" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
-                <a href="https://www.linkedin.com/feed/" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-facebook"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
+                <a href="#" style="color: #fff;"><i class="fa-brands fa-x-twitter"></i></a>
+                 <a href="#" target="_blank" style="color: #fff;"><i class="fab fa-linkedin-in"></i></a>
             </div>
         </div>
     </div>
