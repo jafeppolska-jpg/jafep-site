@@ -4952,3 +4952,48 @@ html, body {
         align-items: center;
     }
 }
+
+/* Контейнер для палитры внутри карточки */
+.color-palette-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px auto;
+    padding: 0 10px;
+    max-width: 240px; /* Чтобы квадратики красиво встали в ряды */
+}
+
+/* Стили цветных квадратиков */
+.color-square {
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+/* Эффект увеличения при наведении */
+.color-square:hover {
+    transform: scale(1.15);
+    border-color: #8dc63f; /* Фирменный зеленый ховер */
+}
+
+/* Выделение активного/выбранного цвета */
+.color-square.active {
+    border: 2px solid #8dc63f !important;
+    transform: scale(1.1);
+    box-shadow: 0 0 5px rgba(141, 198, 63, 0.5);
+}
+
+/* Корректировка для структуры карточки, чтобы кнопка всегда была внизу */
+#universal-pigment-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+
