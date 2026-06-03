@@ -4994,6 +4994,18 @@ html, body {
     justify-content: space-between;
 }
 
+@media (max-width: 768px) {
+    .gallery-wrapper {
+        min-height: 300px !important; /* Увеличиваем высоту на мобильных */
+    }
+    .gallery-wrapper img {
+        object-fit: contain !important; /* Чтобы банки не обрезались */
+    }
+    .flex-row {
+        flex-direction: column !important; /* Текст и картинка в Why Jafep встанут друг под друга */
+    }
+}
+
 
 
 
