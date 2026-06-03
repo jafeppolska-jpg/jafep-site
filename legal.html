@@ -67,14 +67,19 @@
     </div>
 
     <div class="legal-text">
-        <section class="legal-info-box">
+        <p class="legal-info-box">
             <p id="legal-owner-text"><strong>Właścicielem tej strony jest:</strong></p>
             <p>JAFEP POLSKA</p>
+            <p id = "firm-full-name"><strong>Pełna Nazwa Firmy:</strong></p>
+            <p>IHOR PODUBIIENKO JAFEP POLKSA</p>
+            <p id="jdg-name"><strong>Forma działalności:</strong></p>
+            <p id="jdg-value">Jednoosobowa Działalność Gospodarcza</p>          
             <p>Bartycka 24/26, Pawilon 10A, Warszawa</p>
             <p id="legal-country">Polska</p>
             <p>Email: jafeppolska@gmail.com</p>
             <p id="legal-phone-text">Numer telefonu: 791 179 394</p>
             <p>NIP: 5214157782</p>
+            <p>REGON: 544268052</p>
             <br>
             <p id="legal-rep-text"><strong>Przedstawiciel ustawowy PRODUCTOS JAFEP S.L.:</strong></p>
             <p>Carlos Cantos Carrilero</p>
@@ -384,6 +389,11 @@ legalTitle: "Nota prawna",
         "menu-where": "Gdzie kupić?",
         "menu-where-cons": "Jestem konsumentem",
         "menu-where-dist": "Jestem dystrybutorem",
+        "jdg-name": "Forma działalności:",
+        "firm-full-name": "Pełna Nazwa Firmy:",
+        "jdg-value": "Jednoosobowa Działalność Gospodarcza",
+
+
 
         
     // ...
@@ -476,6 +486,9 @@ legalTitle: "Legal Notice",
         "menu-where": "Where to buy?",
         "menu-where-cons": "I am a consumer",
         "menu-where-dist": "I am a distributor",
+        "firm-full-name": "Full Company Name:",
+        "jdg-name": "Form of activity:",
+        "jdg-value": "Sole Proprietorship",
           
         },
         ru: {
@@ -565,6 +578,9 @@ legalTitle: "Правовая информация",
         "menu-where": "Где купить?",
         "menu-where-cons": "Я потребитель",
         "menu-where-dist": "Я дистрибьютор",
+        "firm-full-name": "Полное название компании:",
+        "jdg-name": "Форма деятельности :",
+        "jdg-value": "Индивидуальный предприниматель",
 
         },
         ua: {
@@ -654,6 +670,9 @@ legalTitle: "Правовая информация",
         "menu-where": "Де купити?",
         "menu-where-cons": "Я споживач",
         "menu-where-dist": "Я дистриб'ютор",
+        "firm-full-name": "Повна назва компанії:",
+        "jdg-name": "Форма діяльності:",
+        "jdg-value": "ФОП (Фізична особа-підприємець)",
         }
     };
 
@@ -754,6 +773,16 @@ const mainTitle = document.getElementById('legal-main-title');
     // Treść sekcji 1 (P)
     const sec1p1 = document.getElementById('legal-sec-1-p1');
     if (sec1p1) sec1p1.innerText = t.sec1p1;
+
+    const firmName = document.getElementById('firm-full-name');
+    if (firmName) firmName.innerHTML = t["firm-full-name"];
+
+    // Forma działalności
+    const jdgName = document.getElementById('jdg-name');
+    if (jdgName) jdgName.innerHTML = t["jdg-name"]
+
+    const jdgValue = document.getElementById('jdg-value');
+if (jdgValue) jdgValue.innerText = t["jdg-value"];
 
     // Logika wizualna przycisków językowych
     document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -962,6 +991,7 @@ if (newsHeader && t["news-1-head"]) {
             });
         });
     }
+    
 
    function startProductSlider() {
     const slides = document.querySelectorAll('.gallery-wrapper .slide');
