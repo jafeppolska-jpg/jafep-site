@@ -3361,8 +3361,8 @@ img {
 /* Контейнер для кнопки и подсказки */
 .tg-wrapper {
     position: fixed;
-    bottom: 40px;
-    right: 40px;
+    bottom: 96px;
+    right: 20px;
     display: flex;
     align-items: center;
     z-index: 2000;
@@ -4586,18 +4586,18 @@ html, body {
 }
 
 /* Индикатор Allegro */
-.allegro-badge {
+.product-cta-badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 8px;
     background: #f5f5f5;
-    color: #ff5a00; /* Фирменный оранжевый цвет Allegro */
+    color: #e30613; /* Фирменный красный Jafep (было: оранжевый Allegro) */
     font-weight: bold;
     font-size: 0.9rem;
     padding: 10px 15px;
     border-radius: 25px;
-    border: 1px solid #ff5a00;
+    border: 1px solid #e30613;
     margin-top: auto;
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
     width: 100%;
@@ -4605,23 +4605,219 @@ html, body {
 }
 
 /* --- ЭФФЕКТЫ НАВЕДЕНИЯ (HOVER) --- */
-.product-card-link:hover .product-card {
-    transform: translateY(-8px); /* Карточка плавно приподнимается */
-    box-shadow: 0 12px 24px rgba(255, 90, 0, 0.15); /* Тень приобретает оттенок Allegro */
-    border-color: #ff5a00;
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(227, 6, 19, 0.15);
+    border-color: #e30613;
 }
 
-.product-card-link:hover .product-image-wrapper img {
-    transform: scale(1.04); /* Картинка слегка увеличивается */
+.product-card:hover .product-image-wrapper img {
+    transform: scale(1.04);
 }
 
-.product-card-link:hover .product-title {
-    color: #ff5a00; /* Название меняет цвет */
+.product-card:hover .product-title {
+    color: #e30613;
 }
 
-.product-card-link:hover .allegro-badge {
-    background-color: #ff5a00; /* Кнопка полностью закрашивается */
+.product-card:hover .product-cta-badge {
+    background-color: #e30613;
     color: #ffffff;
+}
+
+/* --- Ссылка-обёртка картинки+названия внутри карточки (не растягивает всю карточку) --- */
+.product-card-inner-link {
+    text-decoration: none !important;
+    color: inherit !important;
+    display: block;
+}
+
+/* --- Цена товара --- */
+.product-price-line {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 6px;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    font-size: 0.95rem;
+}
+
+.price-from-label {
+    color: #888;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.price-old-small {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.price-now {
+    color: #e30613;
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+
+.price-unit {
+    color: #888;
+    font-size: 0.8rem;
+}
+
+/* --- Действия карточки: "Zapytaj o cenę" + "Do zapytania" --- */
+.product-actions {
+    display: flex;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.product-actions .product-cta-badge {
+    flex: 1;
+}
+
+.btn-add-quote {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #ffffff;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 10px 12px;
+    border-radius: 25px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+.btn-add-quote:hover {
+    background: #222;
+    color: #fff;
+    border-color: #222;
+}
+
+.btn-add-quote.added {
+    background: #1a9c4b;
+    color: #fff;
+    border-color: #1a9c4b;
+}
+
+/* --- Плавающая панель "Zapytanie ofertowe" --- */
+#quote-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 999;
+    background: #e30613;
+    color: #fff;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    cursor: pointer;
+    border: none;
+}
+
+#quote-fab .quote-count {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    background: #111;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+}
+
+#quote-panel {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    z-index: 999;
+    width: 300px;
+    max-width: calc(100vw - 40px);
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    padding: 18px;
+    display: none;
+}
+
+#quote-panel.open {
+    display: block;
+}
+
+#quote-panel h4 {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    color: #222;
+}
+
+#quote-panel-list {
+    list-style: none;
+    margin: 0 0 14px 0;
+    padding: 0;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+#quote-panel-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+#quote-panel-list li button {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#quote-panel-empty {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 14px;
+}
+
+#quote-panel-send {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: #e30613;
+    color: #fff;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 25px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+}
+
+@media (max-width: 480px) {
+    .product-actions {
+        flex-direction: column;
+    }
 }
 
 /* --- СТРОГАЯ СЕТКА ДЛЯ МОБИЛОК (УБИРАЕТ ВЫЛЕТ ЗА ЭКРАН) --- */
@@ -4658,7 +4854,7 @@ html, body {
         margin-bottom: 8px !important;
     }
 
-    .allegro-badge {
+    .product-cta-badge {
         font-size: 0.7rem !important;
         padding: 8px 4px !important;
         gap: 4px !important;
@@ -4994,6 +5190,64 @@ html, body {
     justify-content: space-between;
 }
 
+/* --- Przełącznik pojemności (4L / 8L / 15L itd.) --- */
+.size-switch {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+    margin: 10px 0;
+}
+
+.size-btn {
+    background: #f5f5f5;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.size-btn:hover {
+    border-color: #e30613;
+    color: #e30613;
+}
+
+.size-btn.active {
+    background: #e30613;
+    color: #fff;
+    border-color: #e30613;
+}
+
+/* Nazwa aktualnie wybranego koloru w kartach z paletą */
+.color-name-preview {
+    font-size: 0.8rem;
+    color: #555;
+    font-weight: 600;
+    min-height: 1.2em;
+    margin: 4px 0 0 0;
+}
+
+@media (max-width: 768px) {
+            .jafep-polska-intro .about-visuals {
+                width: 100%;
+                max-width: 100% !important;
+            }
+            .jafep-polska-intro .main-about-img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+        /* Эффект улучшения качества (четкость и сочность) для открытого фото */
+        .enhanced-quality {
+            filter: contrast(1.03) saturate(1.05) brightness(1.02);
+            image-rendering: -webkit-optimize-contrast;
+            image-rendering: crisp-edges;
+        }
+
 @media (max-width: 768px) {
     .gallery-wrapper {
         min-height: 300px !important; /* Увеличиваем высоту на мобильных */
@@ -5006,6 +5260,340 @@ html, body {
     }
 }
 
+/* Эффект при наведении на кнопку PDF */
+#emalia-store-btn {
+    transition: all 0.3s ease-in-out;
+}
 
+#emalia-store-btn:hover {
+    background: #e30613 !important; /* Меняет фон на красный */
+    color: #ffffff !important;
+    border-color: #e30613 !important;
+    transform: translateY(-2px); /* Легкий подъем кнопки вверх */
+    box-shadow: 0 5px 15px rgba(227, 6, 19, 0.3); /* Красивое свечение */
+}
+
+.tds-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .tds-header {
+            border-bottom: 3px solid #0056b3;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tds-title {
+            font-size: 2.2rem;
+            color: #111;
+            text-transform: uppercase;
+            font-weight: 800;
+            margin: 0 0 5px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .tds-subtitle {
+            font-size: 1.3rem;
+            color: #0056b3;
+            font-weight: 600;
+            margin: 0 0 15px 0;
+        }
+
+        .tds-description {
+            font-size: 1.05rem;
+            color: #555;
+            text-align: justify;
+        }
+
+        .tds-section {
+            margin-bottom: 35px;
+        }
+
+        .tds-section-title {
+            font-size: 1.4rem;
+            color: #111;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .tds-section-title i {
+            color: #0056b3;
+        }
+
+        /* Грид для преимуществ */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: #f8f9fa;
+            border-left: 4px solid #0056b3;
+            padding: 15px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .benefit-item strong {
+            display: block;
+            font-size: 1.1rem;
+            color: #111;
+            margin-bottom: 5px;
+        }
+
+        /* Список применения */
+        .use-list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+
+        .use-list li {
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .use-list li::before {
+            content: "\f00c";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: #28a745;
+        }
+
+        /* Таблица характеристик */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 1rem;
+        }
+
+        .tech-table th, .tech-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        .tech-table th {
+            background-color: #f1f3f5;
+            color: #111;
+            font-weight: 700;
+            width: 35%;
+        }
+
+        .tech-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Блоки нанесения и инструкций */
+        .sub-block {
+            margin-bottom: 20px;
+        }
+
+        .sub-block h4 {
+            font-size: 1.15rem;
+            color: #222;
+            margin: 0 0 10px 0;
+            font-weight: 600;
+        }
+
+        .instruction-steps {
+            padding-left: 20px;
+        }
+
+        .instruction-steps li {
+            margin-bottom: 8px;
+        }
+
+        /* Блок фасовки */
+        .packaging-badges {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+
+        .package-badge {
+            background: #e9ecef;
+            color: #495057;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1px solid #ced4da;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .tds-title { font-size: 1.8rem; }
+            .tech-table th, .tech-table td { padding: 8px 10px; font-size: 0.95rem; }
+            .tech-table { display: block; overflow-x: auto; }
+        }
+        
+        /* Интерактивная витрина товара Jafep (Левая колонка) */
+.product-showcase {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Левая галерея: фото, цены, палитра */
+.product-gallery {
+    flex: 1;
+    min-width: 340px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+/* Контейнер для банки */
+.product-image-wrapper {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.product-image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Блок цен */
+.price-block {
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+    margin-bottom: 20px;
+}
+
+.price-old-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 5px;
+}
+
+.price-original {
+    font-size: 1.1rem;
+    color: #6c757d;
+    text-decoration: line-through;
+    font-weight: 500;
+}
+
+/* Красный квадрат -30% */
+.discount-badge {
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.price-discount {
+    font-size: 2.2rem;
+    color: #111;
+    font-weight: 800;
+}
+
+/* Блок выбора цветов (слева под ценой) */
+.color-selector-block {
+    border-top: 1px solid #dee2e6;
+    padding-top: 15px;
+}
+
+.color-selector-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    color: #222;
+    letter-spacing: 0.5px;
+}
+
+/* Сетка кружочков */
+.color-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Круглые переключатели */
+.color-swatch {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 2px solid #dee2e6;
+    cursor: pointer;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.color-swatch:hover, .color-swatch.active {
+    transform: scale(1.15);
+    border-color: #0056b3;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Правая колонка: Текст описания */
+.product-info {
+    flex: 1.5;
+}
+
+.color-status {
+    font-size: 0.95rem;
+    color: #495057;
+    background: #e9ecef;
+    padding: 6px 12px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.color-status span {
+    color: #0056b3;
+}
+
+/* Адаптивность под мобилки */
+@media (max-width: 768px) {
+    .product-showcase {
+        flex-direction: column;
+    }
+    .product-gallery {
+        max-width: 100%;
+        width: 100%;
+    }
+}
 
 
