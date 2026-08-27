@@ -468,19 +468,21 @@ window.addEventListener('scroll', function() {
     }
 });
 </script>
+<footer class="mobile-footer" style="background: #222; color: #fff; padding: 60px 0 20px;">
+    <div class="container footer-container-mobile" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-start;">
 
-<footer style="background: #222; color: #fff; padding: 60px 0 20px;">
-    <div class="container" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; align-items: flex-start;">
         <div style="flex: 1; min-width: 250px;">
             <img src="img/footerlogo.png" alt="Jafep" class="footer-logo-img">
             <p id="footer-desc" style="font-size: 0.9rem; color: #ccc; margin-top: 20px;">
                 Hiszpańska tradycja i nowoczesna technologia w produkcji farb i lakierów. Jakość potwierdzona certyfikatami na całym świecie.
             </p>
         </div>
+
         <div style="flex: 1; min-width: 150px;">
             <h4 id="footer-nav-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Menu</h4>
             <ul style="list-style: none; padding: 0; margin: 0; line-height: 2;">
-                <li><a href="about.html" id="f-menu-about" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">O nas</a></li>                <li class="dropdown footer-dropdown">
+                <li><a href="about.html" id="f-menu-about" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">O nas</a></li>
+                <li class="dropdown footer-dropdown">
                     <a href="javascript:void(0)" class="dropbtn" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">
                         <span id="f-menu-where-text">Gdzie kupić?</span>
                         <i class="fas fa-chevron-down nav-arrow"></i>
@@ -492,8 +494,10 @@ window.addEventListener('scroll', function() {
                 </li>
                 <li><a href="catalogues.html" id="f-menu-catalogues" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Katalogi</a></li>
                 <li><a href="products.html" id="f-menu-products" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Produkty</a></li>
-                
+                <li><a href="facades.html" id="f-menu-facades" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Farby elewacyjne</a></li>
+                <li><a href="interiors.html" id="f-menu-interiors" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Farby do wnętrz</a></li>
                 <li><a href="contact.html" id="f-menu-contact" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Kontakt</a></li>
+                <li><a href="blog.html" id="f-menu-blog" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Blog</a></li>
             </ul>
         </div>
 
@@ -504,15 +508,28 @@ window.addEventListener('scroll', function() {
                 <li><a href="cookies.html" id="f-legal-cookies" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Polityka cookies</a></li>
                 <li><a href="legal.html" id="f-legal-notice" style="color: #ccc; text-decoration: none; font-size: 0.9rem;">Nota prawna</a></li>
             </ul>
+            <div style="margin-top: 20px; font-size: 0.9rem; color: #ccc; line-height: 1.8;">
+                <p><strong>NIP:</strong> 5214157782</p>
+                <p><strong>REGON:</strong> 544268052</p>
+                <p><strong>JDG:</strong> IHOR PODUBIIENKO JAFEP POLSKA</p>
+            </div>
         </div>
 
         <div style="flex: 1; min-width: 200px;">
             <h4 id="footer-contact-title" style="border-bottom: 2px solid #e30613; display: inline-block; margin-bottom: 20px;">Kontakt</h4>
-            <p style="font-size: 0.9rem; color: #ccc;">+48 791 179 394</p>
-            <p style="font-size: 0.9rem; color: #ccc;">+48 733 596 117</p>
-            <p style="font-size: 0.9rem; color: #ccc;">+48 519 648 311</p>
+            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 5px;">+48 791 179 394</p>
+            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 5px;">+48 733 596 117</p>
+            <p style="font-size: 0.9rem; color: #ccc; margin-bottom: 15px;">+48 519 648 311</p>
             <p style="font-size: 0.9rem; color: #ccc;">jafeppolska@gmail.com</p>
-            <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 15px;">
+
+            <div style="margin-top: 20px; border-top: 1px solid #444; padding-top: 15px;">
+                <h5 id="f-schedule-title" style="color: #fff; margin: 0 0 10px 0; font-size: 0.95rem; text-transform: uppercase;">Godziny otwarcia:</h5>
+                <p id="f-schedule-workdays" style="font-size: 0.85rem; color: #ccc; margin: 3px 0;">Pn - Pt: 08:00 - 17:00</p>
+                <p id="f-schedule-saturday" style="font-size: 0.85rem; color: #ccc; margin: 3px 0;">Sb: 09:00 - 15:00</p>
+                <p id="f-schedule-sunday" style="font-size: 0.85rem; color: #e30613; margin: 3px 0; font-weight: bold;">Nd: ZAMKNIĘTE</p>
+            </div>
+
+            <div class="social-links" style="font-size: 1.2rem; display: flex; gap: 15px; margin-top: 20px;">
                 <a href="https://www.facebook.com/share/1GzEH965iM/" style="color: #fff;"><i class="fab fa-facebook"></i></a>
                 <a href="https://www.instagram.com/jafeppolska?igsh=MWtiY20waTN4N2s0dA==" style="color: #fff;"><i class="fab fa-instagram"></i></a>
                 <a href="https://www.tiktok.com/@jafeppolska?_r=1&_t=ZN-95KAgA3dLy2" style="color: #fff;"><i class="fab fa-tiktok"></i></a>
@@ -525,6 +542,7 @@ window.addEventListener('scroll', function() {
         © 2026 Jafep Polska. <span id="footer-rights">Wszystkie prawa zastrzeżone.</span>
     </div>
 </footer>
+
 
 <div class="tg-wrapper">
     <div class="tg-tooltip" id="tg-tooltip-text">Potrzebujesz pomocy? <strong>Napisz do nas</strong></div>
